@@ -3356,8 +3356,8 @@
     },
     {
       "atomType": "Code",
-      "x": 0.47786458333333337,
-      "y": 0.7470238095238095,
+      "x": 0.48828125,
+      "y": 0.824404761904762,
       "uniqueID": "id-26499",
       "ioValues": [
         {
@@ -3372,6 +3372,257 @@
       "interpreterVersion": 1,
       "code": "function run(shape: Assembly, offset: number = 1) {\n  return shape.onLeafs((leaf) => {\n    console.log(leaf)\n    leaf.geometry = (leaf.geometry as replicad.Solid).offset(offset)\n    //leaf.geometry = replicad.makeOffset(leaf.geometry, offset);\n  })\n}",
       "compiledCode": "\"use strict\";\nfunction run(shape, offset = 1) {\n    return shape.onLeafs((leaf) => {\n        console.log(leaf);\n        leaf.geometry = leaf.geometry.offset(offset);\n        //leaf.geometry = replicad.makeOffset(leaf.geometry, offset);\n    });\n}\n"
+    },
+    {
+      "atomType": "Molecule",
+      "x": 0.4466145833333333,
+      "y": 0.5654761904761905,
+      "uniqueID": "id-26510",
+      "name": "Molecule",
+      "topLevel": false,
+      "allAtoms": [
+        {
+          "atomType": "Output",
+          "x": 0.98,
+          "y": 0.5,
+          "uniqueID": "id-26512",
+          "ioValues": [
+            {
+              "name": "number or geometry",
+              "ioValue": "__GEOMETRY_INPUT__"
+            }
+          ]
+        },
+        {
+          "atomType": "Circle",
+          "x": 0.15559895833333334,
+          "y": 0.29464285714285715,
+          "uniqueID": "id-26516",
+          "ioValues": [
+            {
+              "name": "diameter",
+              "ioValue": 20,
+              "currentEquation": "20"
+            }
+          ]
+        },
+        {
+          "atomType": "Circle",
+          "x": 0.17643229166666669,
+          "y": 0.7678571428571428,
+          "uniqueID": "id-26519",
+          "ioValues": [
+            {
+              "name": "diameter",
+              "ioValue": 11
+            }
+          ]
+        },
+        {
+          "atomType": "Move",
+          "x": 0.2578125,
+          "y": 0.7827380952380952,
+          "uniqueID": "id-26522",
+          "ioValues": [
+            {
+              "name": "geometry",
+              "ioValue": "__GEOMETRY_INPUT__"
+            },
+            {
+              "name": "xDist",
+              "ioValue": 14
+            },
+            {
+              "name": "yDist",
+              "ioValue": 0
+            },
+            {
+              "name": "zDist",
+              "ioValue": 0,
+              "currentEquation": "0"
+            }
+          ]
+        },
+        {
+          "atomType": "ShrinkWrap",
+          "x": 0.43359375,
+          "y": 0.5476190476190477,
+          "uniqueID": "id-26528",
+          "name": "Shrink Wrap",
+          "ioValues": [
+            {
+              "name": "Shape 1",
+              "ioValue": "__GEOMETRY_INPUT__"
+            },
+            {
+              "name": "Shape 2",
+              "ioValue": "__GEOMETRY_INPUT__"
+            },
+            {
+              "name": "Shape 3",
+              "ioValue": "__GEOMETRY_INPUT__"
+            },
+            {
+              "name": "Shape 4",
+              "ioValue": "__GEOMETRY_INPUT__"
+            },
+            {
+              "name": "Shape 1",
+              "ioValue": {
+                "geometry": "circle-10",
+                "dimension": "2D",
+                "tags": [],
+                "plane": {
+                  "origin": [
+                    0,
+                    0,
+                    0
+                  ],
+                  "xDir": [
+                    1,
+                    0,
+                    0
+                  ],
+                  "normal": [
+                    0,
+                    0,
+                    1
+                  ]
+                },
+                "color": "#aad7f2",
+                "bom": []
+              }
+            },
+            {
+              "name": "Shape 2",
+              "ioValue": {
+                "geometry": "move-circle-5.5-14-0-0",
+                "dimension": "2D",
+                "tags": [],
+                "plane": {
+                  "origin": [
+                    0,
+                    0,
+                    0
+                  ],
+                  "xDir": [
+                    1,
+                    0,
+                    0
+                  ],
+                  "normal": [
+                    0,
+                    0,
+                    1
+                  ]
+                },
+                "color": "#aad7f2",
+                "bom": []
+              }
+            },
+            {
+              "name": "Shape 3",
+              "ioValue": {
+                "geometry": "move-circle-9-5-0-0",
+                "dimension": "2D",
+                "tags": [],
+                "plane": {
+                  "origin": [
+                    0,
+                    0,
+                    0
+                  ],
+                  "xDir": [
+                    1,
+                    0,
+                    0
+                  ],
+                  "normal": [
+                    0,
+                    0,
+                    1
+                  ]
+                },
+                "color": "#aad7f2",
+                "bom": []
+              }
+            },
+            {
+              "name": "Shape 4",
+              "ioValue": null
+            }
+          ]
+        },
+        {
+          "atomType": "Circle",
+          "x": 0.17578125,
+          "y": 0.5892857142857143,
+          "uniqueID": "id-26539",
+          "ioValues": [
+            {
+              "name": "diameter",
+              "ioValue": 18
+            }
+          ]
+        },
+        {
+          "atomType": "Move",
+          "x": 0.2721354166666667,
+          "y": 0.5684523809523809,
+          "uniqueID": "id-26540",
+          "ioValues": [
+            {
+              "name": "geometry",
+              "ioValue": "__GEOMETRY_INPUT__"
+            },
+            {
+              "name": "xDist",
+              "ioValue": 5
+            },
+            {
+              "name": "yDist",
+              "ioValue": 0
+            },
+            {
+              "name": "zDist",
+              "ioValue": 0
+            }
+          ]
+        }
+      ],
+      "allConnectors": [
+        {
+          "ap2Name": "Shape 1",
+          "ap1ID": "id-26516",
+          "ap2ID": "id-26528"
+        },
+        {
+          "ap2Name": "geometry",
+          "ap1ID": "id-26519",
+          "ap2ID": "id-26522"
+        },
+        {
+          "ap2Name": "Shape 2",
+          "ap1ID": "id-26522",
+          "ap2ID": "id-26528"
+        },
+        {
+          "ap2Name": "number or geometry",
+          "ap1ID": "id-26528",
+          "ap2ID": "id-26512"
+        },
+        {
+          "ap2Name": "geometry",
+          "ap1ID": "id-26539",
+          "ap2ID": "id-26540"
+        },
+        {
+          "ap2Name": "Shape 3",
+          "ap1ID": "id-26540",
+          "ap2ID": "id-26528"
+        }
+      ],
+      "fileTypeVersion": 1
     }
   ],
   "allConnectors": [
