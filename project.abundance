@@ -7,7 +7,8 @@
   "ioValues": [
     {
       "name": "HullMaterialWidth",
-      "ioValue": 10
+      "ioValue": 0.25,
+      "currentEquation": "0.25"
     }
   ],
   "topLevel": true,
@@ -3139,7 +3140,7 @@
             "rotate": 330,
             "translate": {
               "x": -205.1687774658203,
-              "y": 163.16397094726562
+              "y": 152
             }
           },
           {
@@ -3159,6 +3160,57 @@
       "y": 0.5297619047619048,
       "uniqueID": "id-24251",
       "name": "HullMaterialWidth"
+    },
+    {
+      "atomType": "Extrude",
+      "x": 0.6126302083333334,
+      "y": 0.3392857142857143,
+      "uniqueID": "id-24254",
+      "ioValues": [
+        {
+          "name": "geometry",
+          "ioValue": "__GEOMETRY_INPUT__"
+        },
+        {
+          "name": "height",
+          "ioValue": 0.25
+        }
+      ]
+    },
+    {
+      "atomType": "Gcode",
+      "x": 0.732421875,
+      "y": 0.17261904761904762,
+      "uniqueID": "id-24258",
+      "ioValues": [
+        {
+          "name": "geometry",
+          "ioValue": "__GEOMETRY_INPUT__"
+        },
+        {
+          "name": "Tool Size",
+          "ioValue": 0.25
+        },
+        {
+          "name": "Passes",
+          "ioValue": 2
+        },
+        {
+          "name": "Speed",
+          "ioValue": 1500
+        },
+        {
+          "name": "Cut Through",
+          "ioValue": 0
+        },
+        {
+          "name": "Part Name",
+          "ioValue": "KayakProj",
+          "currentEquation": "KayakProj"
+        }
+      ],
+      "partName": "KayakProj",
+      "sortDirection": "Left"
     }
   ],
   "allConnectors": [
@@ -3181,6 +3233,26 @@
       "ap2Name": "geometry",
       "ap1ID": "id-24241",
       "ap2ID": "id-24244"
+    },
+    {
+      "ap2Name": "geometry",
+      "ap1ID": "id-24244",
+      "ap2ID": "id-24254"
+    },
+    {
+      "ap2Name": "height",
+      "ap1ID": "id-24251",
+      "ap2ID": "id-24254"
+    },
+    {
+      "ap2Name": "geometry",
+      "ap1ID": "id-24254",
+      "ap2ID": "id-24258"
+    },
+    {
+      "ap2Name": "number or geometry",
+      "ap1ID": "id-24254",
+      "ap2ID": "id-23394"
     }
   ],
   "unitsKey": "Inches",
