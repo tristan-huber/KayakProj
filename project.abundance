@@ -26,8 +26,8 @@
     },
     {
       "atomType": "CutOrient",
-      "x": 0.42578125,
-      "y": 0.20535714285714285,
+      "x": 0.39192708333333337,
+      "y": 0.31547619047619047,
       "uniqueID": "id-24241",
       "name": "Cut Orient",
       "ioValues": [
@@ -41,8 +41,8 @@
     },
     {
       "atomType": "CutLayout",
-      "x": 0.51953125,
-      "y": 0.2113095238095238,
+      "x": 0.5208333333333334,
+      "y": 0.3601190476190476,
       "uniqueID": "id-24244",
       "name": "Cut Layout",
       "ioValues": [
@@ -115,8 +115,8 @@
     },
     {
       "atomType": "Extrude",
-      "x": 0.6126302083333334,
-      "y": 0.3392857142857143,
+      "x": 0.6009114583333334,
+      "y": 0.1636904761904762,
       "uniqueID": "id-24254",
       "ioValues": [
         {
@@ -166,8 +166,8 @@
     },
     {
       "atomType": "GitHubMolecule",
-      "x": 0.310546875,
-      "y": 0.31547619047619047,
+      "x": 0.2975260416666667,
+      "y": 0.318452380952381,
       "uniqueID": "id-24210",
       "name": "crv.Unroll",
       "ioValues": [
@@ -380,8 +380,8 @@
     },
     {
       "atomType": "GitHubMolecule",
-      "x": 0.10611979166666666,
-      "y": 0.34523809523809523,
+      "x": 0.09570312500000001,
+      "y": 0.550595238095238,
       "uniqueID": "id-26088",
       "name": "CamberInterpreter",
       "ioValues": [
@@ -1147,8 +1147,8 @@
     },
     {
       "atomType": "GitHubMolecule",
-      "x": 0.27408854166666663,
-      "y": 0.7678571428571428,
+      "x": 0.1796875,
+      "y": 0.8214285714285714,
       "uniqueID": "id-25480",
       "name": "HullFacesToVolume",
       "ioValues": [
@@ -3356,8 +3356,8 @@
     },
     {
       "atomType": "Code",
-      "x": 0.48828125,
-      "y": 0.824404761904762,
+      "x": 0.31380208333333337,
+      "y": 0.9315476190476191,
       "uniqueID": "id-26499",
       "ioValues": [
         {
@@ -3375,10 +3375,10 @@
     },
     {
       "atomType": "Molecule",
-      "x": 0.4466145833333333,
-      "y": 0.5654761904761905,
+      "x": 0.427734375,
+      "y": 0.6726190476190476,
       "uniqueID": "id-26510",
-      "name": "Molecule",
+      "name": "cockpit",
       "ioValues": [
         {
           "name": "materialthickness",
@@ -4341,6 +4341,171 @@
         }
       ],
       "fileTypeVersion": 1
+    },
+    {
+      "atomType": "Rotate",
+      "x": 0.5748697916666666,
+      "y": 0.6934523809523809,
+      "uniqueID": "id-26769",
+      "ioValues": [
+        {
+          "name": "geometry",
+          "ioValue": "__GEOMETRY_INPUT__"
+        },
+        {
+          "name": "x-axis degrees",
+          "ioValue": 0,
+          "currentEquation": "0"
+        },
+        {
+          "name": "y-axis degrees",
+          "ioValue": -5,
+          "currentEquation": "-5"
+        },
+        {
+          "name": "z-axis degrees",
+          "ioValue": 180,
+          "currentEquation": "180"
+        }
+      ]
+    },
+    {
+      "atomType": "Move",
+      "x": 0.677734375,
+      "y": 0.7708333333333333,
+      "uniqueID": "id-26775",
+      "ioValues": [
+        {
+          "name": "geometry",
+          "ioValue": "__GEOMETRY_INPUT__"
+        },
+        {
+          "name": "xDist",
+          "ioValue": 86.40000010316636
+        },
+        {
+          "name": "yDist",
+          "ioValue": 0
+        },
+        {
+          "name": "zDist",
+          "ioValue": 0
+        }
+      ]
+    },
+    {
+      "atomType": "GitHubMolecule",
+      "x": 0.31705729166666663,
+      "y": 0.7529761904761905,
+      "uniqueID": "id-26785",
+      "name": "Width",
+      "ioValues": [
+        {
+          "name": "Shape",
+          "ioValue": "__GEOMETRY_INPUT__"
+        }
+      ],
+      "topLevel": false,
+      "allAtoms": [
+        {
+          "atomType": "Output",
+          "x": 0.98,
+          "y": 0.5,
+          "uniqueID": "id-26782",
+          "ioValues": [
+            {
+              "name": "number or geometry",
+              "ioValue": "__GEOMETRY_INPUT__"
+            }
+          ]
+        },
+        {
+          "atomType": "Input",
+          "x": 0.025384615384615384,
+          "y": 0.15384615384615385,
+          "uniqueID": "id-26783",
+          "name": "Shape",
+          "type": "geometry"
+        },
+        {
+          "atomType": "Code",
+          "x": 0.380178716490658,
+          "y": 0.47632311977715874,
+          "uniqueID": "id-26784",
+          "ioValues": [
+            {
+              "name": "A",
+              "ioValue": "__GEOMETRY_INPUT__"
+            }
+          ],
+          "interpreterVersion": 0,
+          "code": "/**\n Inputs for this Code Atom:\n - Takes a single geometry input \"A\" and returns its width (X size) as measured by the bounding box.\n*/\nInputs = [\n  { inputName: \"A\", type: \"geometry\", defaultValue: null }\n]\n\nif (!A) {\n  // No input provided — return null to indicate absence.\n  return null\n}\n\n// Get bounding box of A. boundsA.min and boundsA.max are arrays [x, y, z]\nlet boundsA = await GetBounds(A);\nlet min = boundsA.min;\nlet max = boundsA.max;\n\n// Compute width along X (maxX - minX)\nlet width = max[0] - min[0];\n\n// Ensure a non-negative numeric result\nwidth = typeof width === 'number' && isFinite(width) ? Math.max(0, width) : null;\n\nreturn width;"
+        }
+      ],
+      "allConnectors": [
+        {
+          "ap2Name": "A",
+          "ap1ID": "id-26783",
+          "ap2ID": "id-26784"
+        },
+        {
+          "ap2Name": "number or geometry",
+          "ap1ID": "id-26784",
+          "ap2ID": "id-26782"
+        }
+      ],
+      "parentRepo": {
+        "lastFoundGit": "2026-07-05T18:23:39.268Z",
+        "privateRepo": false,
+        "repoName": "Width",
+        "dateCreated": "2025-12-04T20:14:11Z",
+        "likes": 0,
+        "readMe": "https://raw.githubusercontent.com/BarbourSmith/Width/master/README.md?sanitize=true",
+        "yyyy": 2025,
+        "topMoleculeID": "id-386",
+        "githubMoleculesUsed": [],
+        "html_url": "https://github.com/BarbourSmith/Width",
+        "topics": [],
+        "parentRepo": null,
+        "forks": 0,
+        "dateModified": "739589",
+        "ranking": 4.2,
+        "searchField": "width barboursmith takes a shape and returns the width as measured by the shapes bounding box in the x direction ",
+        "owner": "BarbourSmith",
+        "description": "Takes a shape and returns the width as measured by the shapes bounding box in the X direction",
+        "contentURL": "https://raw.githubusercontent.com/BarbourSmith/Width/master/project.abundance?sanitize=true",
+        "svgURL": "https://raw.githubusercontent.com/BarbourSmith/Width/master/project.svg?sanitize=true",
+        "isLocal": false
+      },
+      "unitsKey": "MM",
+      "fileTypeVersion": 1,
+      "lastReloadedFromGithubAt": 1783294758793
+    },
+    {
+      "atomType": "Constant",
+      "x": 0.06184895833333333,
+      "y": 0.7946428571428572,
+      "uniqueID": "id-26794",
+      "name": "cockpitFraction",
+      "value": 0.6
+    },
+    {
+      "atomType": "Equation",
+      "x": 0.392578125,
+      "y": 0.8511904761904762,
+      "uniqueID": "id-26796",
+      "name": "x * y",
+      "ioValues": [
+        {
+          "name": "x",
+          "ioValue": 144.00000017194395
+        },
+        {
+          "name": "y",
+          "ioValue": 0.6
+        }
+      ],
+      "currentEquation": "x * y"
     }
   ],
   "allConnectors": [
@@ -4365,11 +4530,6 @@
       "ap2ID": "id-24258"
     },
     {
-      "ap2Name": "number or geometry",
-      "ap1ID": "id-24254",
-      "ap2ID": "id-23394"
-    },
-    {
       "ap2Name": "geometry",
       "ap1ID": "id-24210",
       "ap2ID": "id-24241"
@@ -4385,9 +4545,44 @@
       "ap2ID": "id-25480"
     },
     {
+      "ap2Name": "number or geometry",
+      "ap1ID": "id-26088",
+      "ap2ID": "id-23394"
+    },
+    {
+      "ap2Name": "Shape",
+      "ap1ID": "id-26088",
+      "ap2ID": "id-26785"
+    },
+    {
       "ap2Name": "shape",
       "ap1ID": "id-25480",
       "ap2ID": "id-26499"
+    },
+    {
+      "ap2Name": "geometry",
+      "ap1ID": "id-26510",
+      "ap2ID": "id-26769"
+    },
+    {
+      "ap2Name": "geometry",
+      "ap1ID": "id-26769",
+      "ap2ID": "id-26775"
+    },
+    {
+      "ap2Name": "x",
+      "ap1ID": "id-26785",
+      "ap2ID": "id-26796"
+    },
+    {
+      "ap2Name": "y",
+      "ap1ID": "id-26794",
+      "ap2ID": "id-26796"
+    },
+    {
+      "ap2Name": "xDist",
+      "ap1ID": "id-26796",
+      "ap2ID": "id-26775"
     }
   ],
   "unitsKey": "Inches",
