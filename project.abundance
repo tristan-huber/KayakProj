@@ -3384,6 +3384,10 @@
           "name": "materialthickness",
           "ioValue": 0.25,
           "currentEquation": "0.25"
+        },
+        {
+          "name": "width",
+          "ioValue": 20
         }
       ],
       "topLevel": false,
@@ -3402,8 +3406,8 @@
         },
         {
           "atomType": "Circle",
-          "x": 0.08333333333333333,
-          "y": 0.5416666666666666,
+          "x": 0.14778645833333334,
+          "y": 0.4851190476190476,
           "uniqueID": "id-26516",
           "ioValues": [
             {
@@ -3421,7 +3425,8 @@
           "ioValues": [
             {
               "name": "diameter",
-              "ioValue": 12
+              "ioValue": 12,
+              "currentEquation": "width * 0.6"
             }
           ]
         },
@@ -3568,7 +3573,8 @@
           "ioValues": [
             {
               "name": "diameter",
-              "ioValue": 18
+              "ioValue": 18,
+              "currentEquation": "width * 0.9"
             }
           ]
         },
@@ -4139,8 +4145,8 @@
         },
         {
           "atomType": "Constant",
-          "x": 0.09700520833333334,
-          "y": 0.318452380952381,
+          "x": 0.11783854166666667,
+          "y": 0.25297619047619047,
           "uniqueID": "id-26740",
           "name": "lipsize",
           "value": 1.2
@@ -4246,6 +4252,13 @@
               "ioValue": null
             }
           ]
+        },
+        {
+          "atomType": "Input",
+          "x": 0.025384615384615384,
+          "y": 0.5684523809523809,
+          "uniqueID": "id-26800",
+          "name": "width"
         }
       ],
       "allConnectors": [
@@ -4338,6 +4351,11 @@
           "ap2Name": "number or geometry",
           "ap1ID": "id-26763",
           "ap2ID": "id-26512"
+        },
+        {
+          "ap2Name": "diameter",
+          "ap1ID": "id-26800",
+          "ap2ID": "id-26516"
         }
       ],
       "fileTypeVersion": 1
@@ -4371,8 +4389,8 @@
     },
     {
       "atomType": "Move",
-      "x": 0.677734375,
-      "y": 0.7708333333333333,
+      "x": 0.646484375,
+      "y": 0.8273809523809523,
       "uniqueID": "id-26775",
       "ioValues": [
         {
@@ -4381,7 +4399,7 @@
         },
         {
           "name": "xDist",
-          "ioValue": 86.40000010316636
+          "ioValue": 75.60000009027058
         },
         {
           "name": "yDist",
@@ -4389,7 +4407,7 @@
         },
         {
           "name": "zDist",
-          "ioValue": 0
+          "ioValue": -3
         }
       ]
     },
@@ -4487,7 +4505,7 @@
       "y": 0.7946428571428572,
       "uniqueID": "id-26794",
       "name": "cockpitFraction",
-      "value": 0.6
+      "value": 0.525
     },
     {
       "atomType": "Equation",
@@ -4502,10 +4520,26 @@
         },
         {
           "name": "y",
-          "ioValue": 0.6
+          "ioValue": 0.525
         }
       ],
       "currentEquation": "x * y"
+    },
+    {
+      "atomType": "Assembly",
+      "x": 0.8736979166666666,
+      "y": 0.7202380952380952,
+      "uniqueID": "id-26803",
+      "ioValues": [
+        {
+          "name": "Shape 1",
+          "ioValue": null
+        },
+        {
+          "name": "Shape 2",
+          "ioValue": null
+        }
+      ]
     }
   ],
   "allConnectors": [
@@ -4545,14 +4579,14 @@
       "ap2ID": "id-25480"
     },
     {
-      "ap2Name": "number or geometry",
-      "ap1ID": "id-26088",
-      "ap2ID": "id-23394"
-    },
-    {
       "ap2Name": "Shape",
       "ap1ID": "id-26088",
       "ap2ID": "id-26785"
+    },
+    {
+      "ap2Name": "Shape 1",
+      "ap1ID": "id-26088",
+      "ap2ID": "id-26803"
     },
     {
       "ap2Name": "shape",
@@ -4570,6 +4604,11 @@
       "ap2ID": "id-26775"
     },
     {
+      "ap2Name": "Shape 2",
+      "ap1ID": "id-26775",
+      "ap2ID": "id-26803"
+    },
+    {
       "ap2Name": "x",
       "ap1ID": "id-26785",
       "ap2ID": "id-26796"
@@ -4583,6 +4622,11 @@
       "ap2Name": "xDist",
       "ap1ID": "id-26796",
       "ap2ID": "id-26775"
+    },
+    {
+      "ap2Name": "number or geometry",
+      "ap1ID": "id-26803",
+      "ap2ID": "id-23394"
     }
   ],
   "unitsKey": "Inches",
