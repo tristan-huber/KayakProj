@@ -3366,12 +3366,12 @@
         },
         {
           "name": "offset",
-          "ioValue": -1
+          "ioValue": 2
         }
       ],
       "interpreterVersion": 1,
-      "code": "function run(shape: Assembly, offset: number = 1) {\n  return shape.onLeafs((leaf) => {\n    leaf.geometry = replicad.makeOffset(leaf.geometry, offset);\n  })\n}",
-      "compiledCode": "\"use strict\";\nfunction run(shape, offset = 1) {\n    return shape.onLeafs((leaf) => {\n        leaf.geometry = replicad.makeOffset(leaf.geometry, offset);\n    });\n}\n"
+      "code": "function run(shape: Assembly, offset: number = 1) {\n  return shape.onLeafs((leaf) => {\n    console.log(leaf)\n    leaf.geometry = (leaf.geometry as replicad.Solid).offset(offset)\n    //leaf.geometry = replicad.makeOffset(leaf.geometry, offset);\n  })\n}",
+      "compiledCode": "\"use strict\";\nfunction run(shape, offset = 1) {\n    return shape.onLeafs((leaf) => {\n        console.log(leaf);\n        leaf.geometry = leaf.geometry.offset(offset);\n        //leaf.geometry = replicad.makeOffset(leaf.geometry, offset);\n    });\n}\n"
     }
   ],
   "allConnectors": [
