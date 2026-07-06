@@ -3484,8 +3484,8 @@
         },
         {
           "atomType": "Move",
-          "x": 0.388671875,
-          "y": 0.14583333333333334,
+          "x": 0.3600260416666667,
+          "y": 0.5803571428571428,
           "uniqueID": "id-26900",
           "ioValues": [
             {
@@ -3596,8 +3596,8 @@
         },
         {
           "atomType": "GitHubMolecule",
-          "x": 0.4908854166666667,
-          "y": 0.2976190476190476,
+          "x": 0.44986979166666663,
+          "y": 0.34226190476190477,
           "uniqueID": "id-26894",
           "name": "ClosestEdge",
           "ioValues": [
@@ -4739,6 +4739,105 @@
               "ioValue": null
             }
           ]
+        },
+        {
+          "atomType": "Rectangle",
+          "x": 0.25260416666666663,
+          "y": 0.1488095238095238,
+          "uniqueID": "id-27074",
+          "ioValues": [
+            {
+              "name": "x length",
+              "ioValue": 144.00000017194395
+            },
+            {
+              "name": "y length",
+              "ioValue": 144.00000017194395
+            }
+          ]
+        },
+        {
+          "atomType": "Move",
+          "x": 0.36328124999999994,
+          "y": 0.14285714285714285,
+          "uniqueID": "id-27078",
+          "ioValues": [
+            {
+              "name": "geometry",
+              "ioValue": "__GEOMETRY_INPUT__"
+            },
+            {
+              "name": "xDist",
+              "ioValue": 2.8800000034388815
+            },
+            {
+              "name": "yDist",
+              "ioValue": 0
+            },
+            {
+              "name": "zDist",
+              "ioValue": 0
+            }
+          ]
+        },
+        {
+          "atomType": "Equation",
+          "x": 0.28059895833333337,
+          "y": 0.27380952380952384,
+          "uniqueID": "id-27084",
+          "name": "(f - 0.5) * w",
+          "ioValues": [
+            {
+              "name": "f",
+              "ioValue": 0.52
+            },
+            {
+              "name": "w",
+              "ioValue": 144.00000017194395
+            }
+          ],
+          "currentEquation": "(f - 0.5) * w"
+        },
+        {
+          "atomType": "Extrude",
+          "x": 0.4375,
+          "y": 0.1607142857142857,
+          "uniqueID": "id-27090",
+          "ioValues": [
+            {
+              "name": "geometry",
+              "ioValue": "__GEOMETRY_INPUT__"
+            },
+            {
+              "name": "height",
+              "ioValue": -100,
+              "currentEquation": "-100"
+            }
+          ]
+        },
+        {
+          "atomType": "Move",
+          "x": 0.5221354166666666,
+          "y": 0.19642857142857142,
+          "uniqueID": "id-27094",
+          "ioValues": [
+            {
+              "name": "geometry",
+              "ioValue": "__GEOMETRY_INPUT__"
+            },
+            {
+              "name": "xDist",
+              "ioValue": 144.00000017194395
+            },
+            {
+              "name": "yDist",
+              "ioValue": 0
+            },
+            {
+              "name": "zDist",
+              "ioValue": 0
+            }
+          ]
         }
       ],
       "allConnectors": [
@@ -4778,6 +4877,26 @@
           "ap2ID": "id-26893"
         },
         {
+          "ap2Name": "x length",
+          "ap1ID": "id-26888",
+          "ap2ID": "id-27074"
+        },
+        {
+          "ap2Name": "y length",
+          "ap1ID": "id-26888",
+          "ap2ID": "id-27074"
+        },
+        {
+          "ap2Name": "w",
+          "ap1ID": "id-26888",
+          "ap2ID": "id-27084"
+        },
+        {
+          "ap2Name": "xDist",
+          "ap1ID": "id-26888",
+          "ap2ID": "id-27094"
+        },
+        {
           "ap2Name": "geometry",
           "ap1ID": "id-26848",
           "ap2ID": "id-26886"
@@ -4803,9 +4922,34 @@
           "ap2ID": "id-26893"
         },
         {
+          "ap2Name": "f",
+          "ap1ID": "id-27066",
+          "ap2ID": "id-27084"
+        },
+        {
           "ap2Name": "number or geometry",
           "ap1ID": "id-27069",
           "ap2ID": "id-26846"
+        },
+        {
+          "ap2Name": "geometry",
+          "ap1ID": "id-27074",
+          "ap2ID": "id-27078"
+        },
+        {
+          "ap2Name": "geometry",
+          "ap1ID": "id-27078",
+          "ap2ID": "id-27090"
+        },
+        {
+          "ap2Name": "xDist",
+          "ap1ID": "id-27084",
+          "ap2ID": "id-27078"
+        },
+        {
+          "ap2Name": "geometry",
+          "ap1ID": "id-27090",
+          "ap2ID": "id-27094"
         }
       ],
       "fileTypeVersion": 1
