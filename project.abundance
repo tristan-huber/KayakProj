@@ -1242,7 +1242,7 @@
             },
             {
               "name": "xDist",
-              "ioValue": 86.40000010316636
+              "ioValue": 86.69999998316638
             },
             {
               "name": "yDist",
@@ -1263,7 +1263,7 @@
           "ioValues": [
             {
               "name": "x",
-              "ioValue": 144.00000017194395
+              "ioValue": 144.49999997194396
             },
             {
               "name": "y",
@@ -1292,7 +1292,7 @@
             },
             {
               "name": "zDist",
-              "ioValue": 86.40000010316636
+              "ioValue": 86.69999998316638
             }
           ]
         },
@@ -1335,11 +1335,11 @@
           "ioValues": [
             {
               "name": "x length",
-              "ioValue": 144.00000017194395
+              "ioValue": 144.49999997194396
             },
             {
               "name": "y length",
-              "ioValue": 144.00000017194395
+              "ioValue": 144.49999997194396
             }
           ]
         },
@@ -1355,7 +1355,7 @@
             },
             {
               "name": "xDist",
-              "ioValue": 14.400000017194392
+              "ioValue": 14.449999997194393
             },
             {
               "name": "yDist",
@@ -1380,7 +1380,7 @@
             },
             {
               "name": "w",
-              "ioValue": 144.00000017194395
+              "ioValue": 144.49999997194396
             }
           ],
           "currentEquation": "(f - 0.5) * w"
@@ -1413,7 +1413,7 @@
             },
             {
               "name": "xDist",
-              "ioValue": 144.00000017194395
+              "ioValue": 144.49999997194396
             },
             {
               "name": "yDist",
@@ -1475,7 +1475,7 @@
             },
             {
               "name": "xDist",
-              "ioValue": 86.40000010316636
+              "ioValue": 86.69999998316638
             },
             {
               "name": "yDist",
@@ -1921,117 +1921,6 @@
         },
         {
           "atomType": "GitHubMolecule",
-          "x": 0.69921875,
-          "y": 0.3125,
-          "uniqueID": "id-27782",
-          "name": "IthFromAssembly",
-          "ioValues": [
-            {
-              "name": "geometry",
-              "ioValue": "__GEOMETRY_INPUT__"
-            },
-            {
-              "name": "i",
-              "ioValue": 1
-            }
-          ],
-          "topLevel": false,
-          "allAtoms": [
-            {
-              "atomType": "Output",
-              "x": 0.98,
-              "y": 0.5,
-              "uniqueID": "id-27778",
-              "ioValues": [
-                {
-                  "name": "number or geometry",
-                  "ioValue": "__GEOMETRY_INPUT__"
-                }
-              ]
-            },
-            {
-              "atomType": "Code",
-              "x": 0.5026041666666666,
-              "y": 0.6845238095238095,
-              "uniqueID": "id-27779",
-              "ioValues": [
-                {
-                  "name": "geometry",
-                  "ioValue": "__GEOMETRY_INPUT__"
-                },
-                {
-                  "name": "i",
-                  "ioValue": 1
-                }
-              ],
-              "interpreterVersion": 0,
-              "code": "\n      const Inputs = [\n       {inputName: \"geometry\", type: \"geometry\", defaultValue: null},\n      {inputName: \"i\", type: \"number\", defaultValue: 0},\n      ]\n      //This defines the molecules inputs and creates variables with the same names which can be referenced in the code\n\n      //Gets the shape from the library - no need to clone or access geometry directly\n      let importedShape = library[geometry]\n      let j = 0;\n      console.log(\"foo\")\n      console.log(importedShape)\n      const leafList = await AssemblyAsIterable(importedShape)\n      console.log(leafList)\n      if (i >= leafList.length) {\n        throw new Error(`Assembly only has ${leafList.length} entries. Tried to find index: ${i}.`)\n      }\n      return leafList[i]\n\n\n      /**\n      Built-in Functions Available:\n      - Move(geometry, x, y, z) - Move a shape in 3D space\n      - Rotate(geometry, x, y, z) - Rotate a shape around X, Y, Z axes (degrees)\n      - Scale(geometry, factor) - Scale a shape by a factor\n      - Assembly([shapes]) - Combine multiple shapes into an assembly\n      - Intersect(shape1, shape2) - Boolean intersection of two shapes\n      - GetBounds(geometry) - Get the bounding box of a shape\n      - Fillet(geometry, radius) - Round edges with specified radius\n      - Chamfer(geometry, size) - Bevel edges with specified size\n\n      To Use the Code Atom, enter your inputs to the input list as an object array:\n      const Inputs = [\n        {inputName: \"shape\", type: \"geometry\", defaultValue: null},\n        {inputName: \"dist\", type: \"number\", defaultValue: 5},\n        {inputName: \"height\", type: \"number\", defaultValue: 10}\n      ]\n\n      Access imported geometry using library[inputName] - the built-in functions handle \n      the complexity of accessing geometry arrays and maintaining metadata automatically.\n\n      Simple Example - Move a shape:\n         const Inputs = [\n          {inputName: \"shape\", type: \"geometry\", defaultValue: null},\n          {inputName: \"x\", type: \"number\", defaultValue: 5}\n        ]\n        let movedShape = await Move(library[shape], x, 0, 0)\n        return movedShape\n      */\n      "
-            },
-            {
-              "atomType": "Input",
-              "x": 0.025384615384615384,
-              "y": 0.15384615384615385,
-              "uniqueID": "id-27780",
-              "name": "geometry",
-              "type": "geometry"
-            },
-            {
-              "atomType": "Input",
-              "x": 0.025384615384615384,
-              "y": 0.24615384615384617,
-              "uniqueID": "id-27781",
-              "name": "i",
-              "type": "number"
-            }
-          ],
-          "allConnectors": [
-            {
-              "ap2Name": "number or geometry",
-              "ap1ID": "id-27779",
-              "ap2ID": "id-27778"
-            },
-            {
-              "ap2Name": "geometry",
-              "ap1ID": "id-27780",
-              "ap2ID": "id-27779"
-            },
-            {
-              "ap2Name": "i",
-              "ap1ID": "id-27781",
-              "ap2ID": "id-27779"
-            }
-          ],
-          "parentRepo": {
-            "lastFoundGit": "2026-07-06T02:23:39.100Z",
-            "privateRepo": false,
-            "repoName": "IthFromAssembly",
-            "dateCreated": "2025-11-03T02:49:44Z",
-            "likes": 0,
-            "readMe": "https://raw.githubusercontent.com/tristan-huber/IthFromAssembly/master/README.md?sanitize=true",
-            "yyyy": 2025,
-            "topMoleculeID": "id-2718",
-            "githubMoleculesUsed": [],
-            "html_url": "https://github.com/tristan-huber/IthFromAssembly",
-            "topics": [
-              "abundance-tool"
-            ],
-            "parentRepo": null,
-            "forks": 0,
-            "dateModified": "739558",
-            "ranking": 9,
-            "searchField": "ithfromassembly tristan-huber get the ith leaf from an assembly abundance-tool",
-            "owner": "tristan-huber",
-            "description": "Get the ith leaf from an assembly",
-            "contentURL": "https://raw.githubusercontent.com/tristan-huber/IthFromAssembly/master/project.abundance?sanitize=true",
-            "svgURL": "https://raw.githubusercontent.com/tristan-huber/IthFromAssembly/master/project.svg?sanitize=true",
-            "isLocal": false
-          },
-          "unitsKey": "Unitless",
-          "fileTypeVersion": 1,
-          "lastReloadedFromGithubAt": 1783313515176
-        },
-        {
-          "atomType": "GitHubMolecule",
           "x": 0.8177083333333334,
           "y": 0.2916666666666667,
           "uniqueID": "id-27804",
@@ -2141,6 +2030,94 @@
           "unitsKey": "Unitless",
           "fileTypeVersion": 1,
           "lastReloadedFromGithubAt": 1783313562389
+        },
+        {
+          "atomType": "GitHubMolecule",
+          "x": 0.1015625,
+          "y": 0.46726190476190477,
+          "uniqueID": "id-28415",
+          "name": "Width",
+          "ioValues": [
+            {
+              "name": "Shape",
+              "ioValue": "__GEOMETRY_INPUT__"
+            }
+          ],
+          "topLevel": false,
+          "allAtoms": [
+            {
+              "atomType": "Output",
+              "x": 0.98,
+              "y": 0.5,
+              "uniqueID": "id-28412",
+              "ioValues": [
+                {
+                  "name": "number or geometry",
+                  "ioValue": "__GEOMETRY_INPUT__"
+                }
+              ]
+            },
+            {
+              "atomType": "Input",
+              "x": 0.025384615384615384,
+              "y": 0.15384615384615385,
+              "uniqueID": "id-28413",
+              "name": "Shape",
+              "type": "geometry"
+            },
+            {
+              "atomType": "Code",
+              "x": 0.380178716490658,
+              "y": 0.47632311977715874,
+              "uniqueID": "id-28414",
+              "ioValues": [
+                {
+                  "name": "A",
+                  "ioValue": "__GEOMETRY_INPUT__"
+                }
+              ],
+              "interpreterVersion": 0,
+              "code": "/**\n Inputs for this Code Atom:\n - Takes a single geometry input \"A\" and returns its width (X size) as measured by the bounding box.\n*/\nInputs = [\n  { inputName: \"A\", type: \"geometry\", defaultValue: null }\n]\n\nif (!A) {\n  // No input provided — return null to indicate absence.\n  return null\n}\n\n// Get bounding box of A. boundsA.min and boundsA.max are arrays [x, y, z]\nlet boundsA = await GetBounds(A);\nlet min = boundsA.min;\nlet max = boundsA.max;\n\n// Compute width along X (maxX - minX)\nlet width = max[0] - min[0];\n\n// Ensure a non-negative numeric result\nwidth = typeof width === 'number' && isFinite(width) ? Math.max(0, width) : null;\n\nreturn width;"
+            }
+          ],
+          "allConnectors": [
+            {
+              "ap2Name": "A",
+              "ap1ID": "id-28413",
+              "ap2ID": "id-28414"
+            },
+            {
+              "ap2Name": "number or geometry",
+              "ap1ID": "id-28414",
+              "ap2ID": "id-28412"
+            }
+          ],
+          "parentRepo": {
+            "lastFoundGit": "2026-07-05T18:23:39.268Z",
+            "privateRepo": false,
+            "repoName": "Width",
+            "dateCreated": "2025-12-04T20:14:11Z",
+            "likes": 0,
+            "readMe": "https://raw.githubusercontent.com/BarbourSmith/Width/master/README.md?sanitize=true",
+            "yyyy": 2025,
+            "topMoleculeID": "id-386",
+            "githubMoleculesUsed": [],
+            "html_url": "https://github.com/BarbourSmith/Width",
+            "topics": [],
+            "parentRepo": null,
+            "forks": 0,
+            "dateModified": "739589",
+            "ranking": 4.2,
+            "searchField": "width barboursmith takes a shape and returns the width as measured by the shapes bounding box in the x direction ",
+            "owner": "BarbourSmith",
+            "description": "Takes a shape and returns the width as measured by the shapes bounding box in the X direction",
+            "contentURL": "https://raw.githubusercontent.com/BarbourSmith/Width/master/project.abundance?sanitize=true",
+            "svgURL": "https://raw.githubusercontent.com/BarbourSmith/Width/master/project.svg?sanitize=true",
+            "isLocal": false
+          },
+          "unitsKey": "MM",
+          "fileTypeVersion": 1,
+          "lastReloadedFromGithubAt": 1783313936776
         },
         {
           "atomType": "Molecule",
@@ -3125,94 +3102,6 @@
             }
           ],
           "fileTypeVersion": 1
-        },
-        {
-          "atomType": "GitHubMolecule",
-          "x": 0.1015625,
-          "y": 0.46726190476190477,
-          "uniqueID": "id-28415",
-          "name": "Width",
-          "ioValues": [
-            {
-              "name": "Shape",
-              "ioValue": "__GEOMETRY_INPUT__"
-            }
-          ],
-          "topLevel": false,
-          "allAtoms": [
-            {
-              "atomType": "Output",
-              "x": 0.98,
-              "y": 0.5,
-              "uniqueID": "id-28412",
-              "ioValues": [
-                {
-                  "name": "number or geometry",
-                  "ioValue": "__GEOMETRY_INPUT__"
-                }
-              ]
-            },
-            {
-              "atomType": "Input",
-              "x": 0.025384615384615384,
-              "y": 0.15384615384615385,
-              "uniqueID": "id-28413",
-              "name": "Shape",
-              "type": "geometry"
-            },
-            {
-              "atomType": "Code",
-              "x": 0.380178716490658,
-              "y": 0.47632311977715874,
-              "uniqueID": "id-28414",
-              "ioValues": [
-                {
-                  "name": "A",
-                  "ioValue": "__GEOMETRY_INPUT__"
-                }
-              ],
-              "interpreterVersion": 0,
-              "code": "/**\n Inputs for this Code Atom:\n - Takes a single geometry input \"A\" and returns its width (X size) as measured by the bounding box.\n*/\nInputs = [\n  { inputName: \"A\", type: \"geometry\", defaultValue: null }\n]\n\nif (!A) {\n  // No input provided — return null to indicate absence.\n  return null\n}\n\n// Get bounding box of A. boundsA.min and boundsA.max are arrays [x, y, z]\nlet boundsA = await GetBounds(A);\nlet min = boundsA.min;\nlet max = boundsA.max;\n\n// Compute width along X (maxX - minX)\nlet width = max[0] - min[0];\n\n// Ensure a non-negative numeric result\nwidth = typeof width === 'number' && isFinite(width) ? Math.max(0, width) : null;\n\nreturn width;"
-            }
-          ],
-          "allConnectors": [
-            {
-              "ap2Name": "A",
-              "ap1ID": "id-28413",
-              "ap2ID": "id-28414"
-            },
-            {
-              "ap2Name": "number or geometry",
-              "ap1ID": "id-28414",
-              "ap2ID": "id-28412"
-            }
-          ],
-          "parentRepo": {
-            "lastFoundGit": "2026-07-05T18:23:39.268Z",
-            "privateRepo": false,
-            "repoName": "Width",
-            "dateCreated": "2025-12-04T20:14:11Z",
-            "likes": 0,
-            "readMe": "https://raw.githubusercontent.com/BarbourSmith/Width/master/README.md?sanitize=true",
-            "yyyy": 2025,
-            "topMoleculeID": "id-386",
-            "githubMoleculesUsed": [],
-            "html_url": "https://github.com/BarbourSmith/Width",
-            "topics": [],
-            "parentRepo": null,
-            "forks": 0,
-            "dateModified": "739589",
-            "ranking": 4.2,
-            "searchField": "width barboursmith takes a shape and returns the width as measured by the shapes bounding box in the x direction ",
-            "owner": "BarbourSmith",
-            "description": "Takes a shape and returns the width as measured by the shapes bounding box in the X direction",
-            "contentURL": "https://raw.githubusercontent.com/BarbourSmith/Width/master/project.abundance?sanitize=true",
-            "svgURL": "https://raw.githubusercontent.com/BarbourSmith/Width/master/project.svg?sanitize=true",
-            "isLocal": false
-          },
-          "unitsKey": "MM",
-          "fileTypeVersion": 1,
-          "lastReloadedFromGithubAt": 1783313936776
         }
       ],
       "allConnectors": [
@@ -3317,9 +3206,9 @@
           "ap2ID": "id-27677"
         },
         {
-          "ap2Name": "geometry",
+          "ap2Name": "Shape 1",
           "ap1ID": "id-27117",
-          "ap2ID": "id-27782"
+          "ap2ID": "id-27794"
         },
         {
           "ap2Name": "geometry",
@@ -3357,16 +3246,6 @@
           "ap2ID": "id-27771"
         },
         {
-          "ap2Name": "Shape 1",
-          "ap1ID": "id-27782",
-          "ap2ID": "id-27794"
-        },
-        {
-          "ap2Name": "geometry",
-          "ap1ID": "id-26848",
-          "ap2ID": "id-26886"
-        },
-        {
           "ap2Name": "x",
           "ap1ID": "id-28415",
           "ap2ID": "id-26893"
@@ -3390,6 +3269,11 @@
           "ap2Name": "xDist",
           "ap1ID": "id-28415",
           "ap2ID": "id-27094"
+        },
+        {
+          "ap2Name": "geometry",
+          "ap1ID": "id-26848",
+          "ap2ID": "id-26886"
         }
       ],
       "fileTypeVersion": 1
@@ -5612,6 +5496,41 @@
       "unitsKey": "Inches",
       "fileTypeVersion": 1,
       "lastReloadedFromGithubAt": 1783278738655
+    },
+    {
+      "atomType": "ExtractTag",
+      "x": 0.224609375,
+      "y": 0.7559523809523809,
+      "uniqueID": "id-29009",
+      "name": "Extract halfhull",
+      "ioValues": [
+        {
+          "name": "geometry",
+          "ioValue": "__GEOMETRY_INPUT__"
+        }
+      ],
+      "tag": "halfhull",
+      "tagIndex": 0
+    },
+    {
+      "atomType": "Code",
+      "x": 0.3346354166666667,
+      "y": 0.7648809523809523,
+      "uniqueID": "id-29012",
+      "ioValues": [
+        {
+          "name": "thickness",
+          "ioValue": -0.25,
+          "currentEquation": "-0.25"
+        },
+        {
+          "name": "faces",
+          "ioValue": "__GEOMETRY_INPUT__"
+        }
+      ],
+      "interpreterVersion": 1,
+      "code": "function run(faces: Assembly, thickness: number = 1) {\n  return faces.onLeafs((leaf) => {\n    const face = (leaf.geometry instanceof replicad.Face) ? leaf.geometry : leaf.geometry.faces[0]\n\n    const offset = replicad.makeOffset(face, thickness);\n    const w1 = replicad.assembleWire(face.edges);\n    const w2 = replicad.assembleWire(offset.edges);\n    const boundary = replicad.loft([w2, w1], {}, true);\n    const solid = replicad.makeSolid([face, offset, boundary]);\n    leaf.geometry = solid;\n    return leaf;\n  })\n}",
+      "compiledCode": "\"use strict\";\nfunction run(faces, thickness = 1) {\n    return faces.onLeafs((leaf) => {\n        const face = (leaf.geometry instanceof replicad.Face) ? leaf.geometry : leaf.geometry.faces[0];\n        const offset = replicad.makeOffset(face, thickness);\n        const w1 = replicad.assembleWire(face.edges);\n        const w2 = replicad.assembleWire(offset.edges);\n        const boundary = replicad.loft([w2, w1], {}, true);\n        const solid = replicad.makeSolid([face, offset, boundary]);\n        leaf.geometry = solid;\n        return leaf;\n    });\n}\n"
     }
   ],
   "allConnectors": [
@@ -5661,14 +5580,24 @@
       "ap2ID": "id-26803"
     },
     {
-      "ap2Name": "hull",
+      "ap2Name": "geometry",
       "ap1ID": "id-26088",
-      "ap2ID": "id-26844"
+      "ap2ID": "id-29009"
     },
     {
       "ap2Name": "shape",
       "ap1ID": "id-25480",
       "ap2ID": "id-26499"
+    },
+    {
+      "ap2Name": "faces",
+      "ap1ID": "id-29009",
+      "ap2ID": "id-29012"
+    },
+    {
+      "ap2Name": "hull",
+      "ap1ID": "id-29012",
+      "ap2ID": "id-26844"
     }
   ],
   "unitsKey": "Inches",
