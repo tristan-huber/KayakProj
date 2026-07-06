@@ -1189,8 +1189,7 @@
         },
         {
           "name": "cockpitPositionFrac",
-          "ioValue": 0.6,
-          "currentEquation": "0.6"
+          "ioValue": 0.6
         }
       ],
       "topLevel": false,
@@ -1314,8 +1313,8 @@
         },
         {
           "atomType": "Assembly",
-          "x": 0.8196614583333333,
-          "y": 0.6339285714285715,
+          "x": 0.83203125,
+          "y": 0.6964285714285714,
           "uniqueID": "id-27069",
           "ioValues": [
             {
@@ -1324,10 +1323,6 @@
             },
             {
               "name": "Shape 2",
-              "ioValue": null
-            },
-            {
-              "name": "Shape 3",
               "ioValue": null
             }
           ]
@@ -1448,6 +1443,89 @@
           "interpreterVersion": 1,
           "code": "function run(wires: Assembly, within: Assembly) {\n  if (!within.isLeaf()) {\n    throw Error(\"within must be  leaf for now\")\n  }\n  const result = []\n  wires.onLeafs((leaf) => {\n    const foo = (within.geometry as replicad.Solid).intersect(leaf.geometry as replicad.Wire)\n    result.push(foo)\n    return leaf;\n  })\n  console.log(result)\n  return result.map((w) => {return replicad.assembleWire(w.edges)})\n}",
           "compiledCode": "\"use strict\";\nfunction run(wires, within) {\n    if (!within.isLeaf()) {\n        throw Error(\"within must be  leaf for now\");\n    }\n    const result = [];\n    wires.onLeafs((leaf) => {\n        const foo = within.geometry.intersect(leaf.geometry);\n        result.push(foo);\n        return leaf;\n    });\n    console.log(result);\n    return result.map((w) => { return replicad.assembleWire(w.edges); });\n}\n"
+        },
+        {
+          "atomType": "Code",
+          "x": 0.6243489583333334,
+          "y": 0.3630952380952381,
+          "uniqueID": "id-27677",
+          "ioValues": [
+            {
+              "name": "wires",
+              "ioValue": "__GEOMETRY_INPUT__"
+            },
+            {
+              "name": "within",
+              "ioValue": "__GEOMETRY_INPUT__"
+            }
+          ],
+          "interpreterVersion": 1,
+          "code": "function run(wires: Assembly, within: Assembly) {\n  if (!within.isLeaf()) {\n    throw Error(\"within must be  leaf for now\")\n  }\n  const result = []\n  wires.onLeafs((leaf) => {\n    const foo = (within.geometry as replicad.Solid).intersect(leaf.geometry as replicad.Wire)\n    result.push(foo)\n    return leaf;\n  })\n  console.log(result)\n  return result.map((w) => {return replicad.assembleWire(w.edges)})\n}",
+          "compiledCode": "\"use strict\";\nfunction run(wires, within) {\n    if (!within.isLeaf()) {\n        throw Error(\"within must be  leaf for now\");\n    }\n    const result = [];\n    wires.onLeafs((leaf) => {\n        const foo = within.geometry.intersect(leaf.geometry);\n        result.push(foo);\n        return leaf;\n    });\n    console.log(result);\n    return result.map((w) => { return replicad.assembleWire(w.edges); });\n}\n"
+        },
+        {
+          "atomType": "Move",
+          "x": 0.5169270833333334,
+          "y": 0.6160714285714285,
+          "uniqueID": "id-27771",
+          "ioValues": [
+            {
+              "name": "geometry",
+              "ioValue": "__GEOMETRY_INPUT__"
+            },
+            {
+              "name": "xDist",
+              "ioValue": 86.40000010316636
+            },
+            {
+              "name": "yDist",
+              "ioValue": 6
+            },
+            {
+              "name": "zDist",
+              "ioValue": -4
+            }
+          ]
+        },
+        {
+          "atomType": "Assembly",
+          "x": 0.7578125,
+          "y": 0.46726190476190477,
+          "uniqueID": "id-27794",
+          "ioValues": [
+            {
+              "name": "Shape 1",
+              "ioValue": null
+            },
+            {
+              "name": "Shape 2",
+              "ioValue": null
+            }
+          ]
+        },
+        {
+          "atomType": "Move",
+          "x": 0.4602864583333333,
+          "y": 0.925595238095238,
+          "uniqueID": "id-27816",
+          "ioValues": [
+            {
+              "name": "geometry",
+              "ioValue": "__GEOMETRY_INPUT__"
+            },
+            {
+              "name": "xDist",
+              "ioValue": 3
+            },
+            {
+              "name": "yDist",
+              "ioValue": 0
+            },
+            {
+              "name": "zDist",
+              "ioValue": 0
+            }
+          ]
         },
         {
           "atomType": "GitHubMolecule",
@@ -1579,6 +1657,490 @@
           "unitsKey": "Unitless",
           "fileTypeVersion": 1,
           "lastReloadedFromGithubAt": 1783311760792
+        },
+        {
+          "atomType": "GitHubMolecule",
+          "x": 0.5481770833333333,
+          "y": 0.8988095238095238,
+          "uniqueID": "id-27681",
+          "name": "ClosestEdge",
+          "ioValues": [
+            {
+              "name": "EdgeFrom",
+              "ioValue": "__GEOMETRY_INPUT__"
+            },
+            {
+              "name": "NearestTo",
+              "ioValue": "__GEOMETRY_INPUT__"
+            },
+            {
+              "name": "tieTolerance",
+              "ioValue": 0.001
+            }
+          ],
+          "topLevel": false,
+          "allAtoms": [
+            {
+              "atomType": "Output",
+              "x": 0.98,
+              "y": 0.5,
+              "uniqueID": "id-27682",
+              "ioValues": [
+                {
+                  "name": "number or geometry",
+                  "ioValue": "__GEOMETRY_INPUT__"
+                }
+              ]
+            },
+            {
+              "atomType": "Code",
+              "x": 0.4309895833333333,
+              "y": 0.5059523809523809,
+              "uniqueID": "id-27683",
+              "ioValues": [
+                {
+                  "name": "edgeFrom",
+                  "ioValue": "__GEOMETRY_INPUT__"
+                },
+                {
+                  "name": "nearestTo",
+                  "ioValue": "__GEOMETRY_INPUT__"
+                },
+                {
+                  "name": "tolerance",
+                  "ioValue": 0.001
+                }
+              ],
+              "interpreterVersion": 1,
+              "code": "\nfunction run(\n  edgeFrom: Assembly,\n  nearestTo: Assembly,\n  tolerance: number = 0.001\n) {\n  let best: replicad.Edge[] = [];\n  let bestDist = Infinity;\n  const target: replicad.Vector = new replicad.Vector(getBBoxCenter(nearestTo)).multiply(-1)\n  edgeFrom.onLeafs((leaf) => {\n    if (!(leaf.geometry instanceof replicad.Drawing)) {\n      for (const edge of leaf.geometry.edges) {\n        const dist = edge.pointAt(.5).add(target).Length;\n        if (dist - bestDist < -1 * tolerance || best.length == 0) {\n          console.log(\"new best dist: \", dist)\n          best = [edge]\n          bestDist = dist;\n        } else if (Math.abs(dist - bestDist) < tolerance) {\n          // include ties\n          best.push(edge)\n        }\n      }\n      return leaf;\n    }\n  })\n  console.log(best)\n  return best.map((e) => { return replicad.assembleWire([e]) });\n}\n\nfunction getBBoxCenter(foo: Assembly) {\n  let bbox: replicad.BoundingBox = undefined;\n  foo.onLeafs((leaf) => {\n    if (bbox == undefined) {\n      bbox = leaf.geometry.boundingBox;\n    } else {\n      bbox.add(leaf.geometry.boundingBox)\n    }\n  })\n  return bbox.center;\n}\n/*\n  const surfaces = [];\n  const leadFaceEdges = [];\n  const endFaceEdges = [];\n  for (let i = 0; i < wireList.length; i++) {\n    const w1 = wireList[i]\n    const w2 = wireList[(i + 1) % wireList.length]\n    const surf = replicad.loft([w1, w2], {}, true)\n    surfaces.push(surf)\n    leadFaceEdges.push(replicad.makeLine(w1.startPoint, w2.startPoint))\n    endFaceEdges.push(replicad.makeLine(w1.endPoint, w2.endPoint))\n  }\n  const frontCap = replicad.makeNonPlanarFace(replicad.assembleWire(leadFaceEdges))\n  const endCap = replicad.makeNonPlanarFace(replicad.assembleWire(endFaceEdges))\n\n  return replicad.makeSolid([frontCap, ...surfaces, endCap])*/",
+              "compiledCode": "\"use strict\";\nfunction run(edgeFrom, nearestTo, tolerance = 0.001) {\n    let best = [];\n    let bestDist = Infinity;\n    const target = new replicad.Vector(getBBoxCenter(nearestTo)).multiply(-1);\n    edgeFrom.onLeafs((leaf) => {\n        if (!(leaf.geometry instanceof replicad.Drawing)) {\n            for (const edge of leaf.geometry.edges) {\n                const dist = edge.pointAt(.5).add(target).Length;\n                if (dist - bestDist < -1 * tolerance || best.length == 0) {\n                    console.log(\"new best dist: \", dist);\n                    best = [edge];\n                    bestDist = dist;\n                }\n                else if (Math.abs(dist - bestDist) < tolerance) {\n                    // include ties\n                    best.push(edge);\n                }\n            }\n            return leaf;\n        }\n    });\n    console.log(best);\n    return best.map((e) => { return replicad.assembleWire([e]); });\n}\nfunction getBBoxCenter(foo) {\n    let bbox = undefined;\n    foo.onLeafs((leaf) => {\n        if (bbox == undefined) {\n            bbox = leaf.geometry.boundingBox;\n        }\n        else {\n            bbox.add(leaf.geometry.boundingBox);\n        }\n    });\n    return bbox.center;\n}\n/*\n  const surfaces = [];\n  const leadFaceEdges = [];\n  const endFaceEdges = [];\n  for (let i = 0; i < wireList.length; i++) {\n    const w1 = wireList[i]\n    const w2 = wireList[(i + 1) % wireList.length]\n    const surf = replicad.loft([w1, w2], {}, true)\n    surfaces.push(surf)\n    leadFaceEdges.push(replicad.makeLine(w1.startPoint, w2.startPoint))\n    endFaceEdges.push(replicad.makeLine(w1.endPoint, w2.endPoint))\n  }\n  const frontCap = replicad.makeNonPlanarFace(replicad.assembleWire(leadFaceEdges))\n  const endCap = replicad.makeNonPlanarFace(replicad.assembleWire(endFaceEdges))\n\n  return replicad.makeSolid([frontCap, ...surfaces, endCap])*/ \n"
+            },
+            {
+              "atomType": "Input",
+              "x": 0.025384615384615384,
+              "y": 0.15384615384615385,
+              "uniqueID": "id-27684",
+              "name": "EdgeFrom",
+              "type": "geometry"
+            },
+            {
+              "atomType": "Input",
+              "x": 0.025384615384615384,
+              "y": 0.24615384615384617,
+              "uniqueID": "id-27685",
+              "name": "NearestTo",
+              "type": "geometry"
+            },
+            {
+              "atomType": "Input",
+              "x": 0.025384615384615384,
+              "y": 0.3384615384615385,
+              "uniqueID": "id-27686",
+              "name": "tieTolerance"
+            }
+          ],
+          "allConnectors": [
+            {
+              "ap2Name": "number or geometry",
+              "ap1ID": "id-27683",
+              "ap2ID": "id-27682"
+            },
+            {
+              "ap2Name": "edgeFrom",
+              "ap1ID": "id-27684",
+              "ap2ID": "id-27683"
+            },
+            {
+              "ap2Name": "nearestTo",
+              "ap1ID": "id-27685",
+              "ap2ID": "id-27683"
+            },
+            {
+              "ap2Name": "tolerance",
+              "ap1ID": "id-27686",
+              "ap2ID": "id-27683"
+            }
+          ],
+          "parentRepo": {
+            "lastFoundGit": "2026-07-06T02:23:39.100Z",
+            "privateRepo": false,
+            "repoName": "ClosestEdge",
+            "dateCreated": "2026-07-05T16:50:19Z",
+            "readMe": "https://raw.githubusercontent.com/tristan-huber/ClosestEdge/master/README.md?sanitize=true",
+            "yyyy": 2026,
+            "topMoleculeID": "id-22851",
+            "githubMoleculesUsed": [],
+            "html_url": "https://github.com/tristan-huber/ClosestEdge",
+            "topics": [
+              "abundance-tool"
+            ],
+            "parentRepo": null,
+            "forks": 0,
+            "dateModified": "739802",
+            "ranking": 0,
+            "searchField": "closestedge tristan-huber return a single edge from an assembly which is closest to another selector shape / assembly. pick an edge based on distance / nearness abundance-tool",
+            "owner": "tristan-huber",
+            "description": "Return a single edge from an assembly which is closest to another selector shape / assembly. Pick an edge based on distance / nearness",
+            "contentURL": "https://raw.githubusercontent.com/tristan-huber/ClosestEdge/master/project.abundance?sanitize=true",
+            "svgURL": "https://raw.githubusercontent.com/tristan-huber/ClosestEdge/master/project.svg?sanitize=true",
+            "isLocal": false
+          },
+          "unitsKey": "Unitless",
+          "fileTypeVersion": 1,
+          "lastReloadedFromGithubAt": 1783311760792
+        },
+        {
+          "atomType": "GitHubMolecule",
+          "x": 0.45182291666666663,
+          "y": 0.5982142857142857,
+          "uniqueID": "id-27756",
+          "name": "crv.Point",
+          "ioValues": [
+            {
+              "name": "X",
+              "ioValue": 0
+            },
+            {
+              "name": "Y",
+              "ioValue": 0
+            },
+            {
+              "name": "Z",
+              "ioValue": 0
+            }
+          ],
+          "topLevel": false,
+          "allAtoms": [
+            {
+              "atomType": "Output",
+              "x": 0.98,
+              "y": 0.5,
+              "uniqueID": "id-27751",
+              "ioValues": [
+                {
+                  "name": "number or geometry",
+                  "ioValue": "__GEOMETRY_INPUT__"
+                }
+              ]
+            },
+            {
+              "atomType": "Input",
+              "x": 0.025384615384615384,
+              "y": 0.15384615384615385,
+              "uniqueID": "id-27752",
+              "name": "X"
+            },
+            {
+              "atomType": "Code",
+              "x": 0.2688802083333333,
+              "y": 0.42857142857142855,
+              "uniqueID": "id-27753",
+              "ioValues": [
+                {
+                  "name": "x",
+                  "ioValue": 0
+                },
+                {
+                  "name": "y",
+                  "ioValue": 0
+                },
+                {
+                  "name": "z",
+                  "ioValue": 0
+                }
+              ],
+              "interpreterVersion": 1,
+              "code": "\nfunction run(x: number = 0, y: number = 0, z: number = 0) {\n  return replicad.makeVertex([x,y,z])\n}",
+              "compiledCode": "\"use strict\";\nfunction run(x = 0, y = 0, z = 0) {\n    return replicad.makeVertex([x, y, z]);\n}\n"
+            },
+            {
+              "atomType": "Input",
+              "x": 0.025384615384615384,
+              "y": 0.24615384615384617,
+              "uniqueID": "id-27754",
+              "name": "Y"
+            },
+            {
+              "atomType": "Input",
+              "x": 0.025384615384615384,
+              "y": 0.3384615384615385,
+              "uniqueID": "id-27755",
+              "name": "Z"
+            }
+          ],
+          "allConnectors": [
+            {
+              "ap2Name": "x",
+              "ap1ID": "id-27752",
+              "ap2ID": "id-27753"
+            },
+            {
+              "ap2Name": "number or geometry",
+              "ap1ID": "id-27753",
+              "ap2ID": "id-27751"
+            },
+            {
+              "ap2Name": "y",
+              "ap1ID": "id-27754",
+              "ap2ID": "id-27753"
+            },
+            {
+              "ap2Name": "z",
+              "ap1ID": "id-27755",
+              "ap2ID": "id-27753"
+            }
+          ],
+          "parentRepo": {
+            "lastFoundGit": "2026-07-06T02:23:39.100Z",
+            "privateRepo": false,
+            "repoName": "crv.Point",
+            "dateCreated": "2026-05-08T22:20:14Z",
+            "likes": 0,
+            "readMe": "https://raw.githubusercontent.com/tristan-huber/crv.Point/master/README.md?sanitize=true",
+            "yyyy": 2026,
+            "topMoleculeID": "id-1",
+            "githubMoleculesUsed": [],
+            "html_url": "https://github.com/tristan-huber/crv.Point",
+            "topics": [
+              "abundance-tool"
+            ],
+            "parentRepo": null,
+            "forks": 0,
+            "dateModified": "739800",
+            "ranking": 2.1,
+            "searchField": "crv.point tristan-huber simple 3d point defined by it's xyz position abundance-tool",
+            "owner": "tristan-huber",
+            "description": "Simple 3d Point defined by it's xyz position",
+            "contentURL": "https://raw.githubusercontent.com/tristan-huber/crv.Point/master/project.abundance?sanitize=true",
+            "svgURL": "https://raw.githubusercontent.com/tristan-huber/crv.Point/master/project.svg?sanitize=true",
+            "isLocal": false
+          },
+          "unitsKey": "Unitless",
+          "fileTypeVersion": 1,
+          "lastReloadedFromGithubAt": 1783313318860
+        },
+        {
+          "atomType": "GitHubMolecule",
+          "x": 0.69921875,
+          "y": 0.3125,
+          "uniqueID": "id-27782",
+          "name": "IthFromAssembly",
+          "ioValues": [
+            {
+              "name": "geometry",
+              "ioValue": "__GEOMETRY_INPUT__"
+            },
+            {
+              "name": "i",
+              "ioValue": 1
+            }
+          ],
+          "topLevel": false,
+          "allAtoms": [
+            {
+              "atomType": "Output",
+              "x": 0.98,
+              "y": 0.5,
+              "uniqueID": "id-27778",
+              "ioValues": [
+                {
+                  "name": "number or geometry",
+                  "ioValue": "__GEOMETRY_INPUT__"
+                }
+              ]
+            },
+            {
+              "atomType": "Code",
+              "x": 0.5026041666666666,
+              "y": 0.6845238095238095,
+              "uniqueID": "id-27779",
+              "ioValues": [
+                {
+                  "name": "geometry",
+                  "ioValue": "__GEOMETRY_INPUT__"
+                },
+                {
+                  "name": "i",
+                  "ioValue": 1
+                }
+              ],
+              "interpreterVersion": 0,
+              "code": "\n      const Inputs = [\n       {inputName: \"geometry\", type: \"geometry\", defaultValue: null},\n      {inputName: \"i\", type: \"number\", defaultValue: 0},\n      ]\n      //This defines the molecules inputs and creates variables with the same names which can be referenced in the code\n\n      //Gets the shape from the library - no need to clone or access geometry directly\n      let importedShape = library[geometry]\n      let j = 0;\n      console.log(\"foo\")\n      console.log(importedShape)\n      const leafList = await AssemblyAsIterable(importedShape)\n      console.log(leafList)\n      if (i >= leafList.length) {\n        throw new Error(`Assembly only has ${leafList.length} entries. Tried to find index: ${i}.`)\n      }\n      return leafList[i]\n\n\n      /**\n      Built-in Functions Available:\n      - Move(geometry, x, y, z) - Move a shape in 3D space\n      - Rotate(geometry, x, y, z) - Rotate a shape around X, Y, Z axes (degrees)\n      - Scale(geometry, factor) - Scale a shape by a factor\n      - Assembly([shapes]) - Combine multiple shapes into an assembly\n      - Intersect(shape1, shape2) - Boolean intersection of two shapes\n      - GetBounds(geometry) - Get the bounding box of a shape\n      - Fillet(geometry, radius) - Round edges with specified radius\n      - Chamfer(geometry, size) - Bevel edges with specified size\n\n      To Use the Code Atom, enter your inputs to the input list as an object array:\n      const Inputs = [\n        {inputName: \"shape\", type: \"geometry\", defaultValue: null},\n        {inputName: \"dist\", type: \"number\", defaultValue: 5},\n        {inputName: \"height\", type: \"number\", defaultValue: 10}\n      ]\n\n      Access imported geometry using library[inputName] - the built-in functions handle \n      the complexity of accessing geometry arrays and maintaining metadata automatically.\n\n      Simple Example - Move a shape:\n         const Inputs = [\n          {inputName: \"shape\", type: \"geometry\", defaultValue: null},\n          {inputName: \"x\", type: \"number\", defaultValue: 5}\n        ]\n        let movedShape = await Move(library[shape], x, 0, 0)\n        return movedShape\n      */\n      "
+            },
+            {
+              "atomType": "Input",
+              "x": 0.025384615384615384,
+              "y": 0.15384615384615385,
+              "uniqueID": "id-27780",
+              "name": "geometry",
+              "type": "geometry"
+            },
+            {
+              "atomType": "Input",
+              "x": 0.025384615384615384,
+              "y": 0.24615384615384617,
+              "uniqueID": "id-27781",
+              "name": "i",
+              "type": "number"
+            }
+          ],
+          "allConnectors": [
+            {
+              "ap2Name": "number or geometry",
+              "ap1ID": "id-27779",
+              "ap2ID": "id-27778"
+            },
+            {
+              "ap2Name": "geometry",
+              "ap1ID": "id-27780",
+              "ap2ID": "id-27779"
+            },
+            {
+              "ap2Name": "i",
+              "ap1ID": "id-27781",
+              "ap2ID": "id-27779"
+            }
+          ],
+          "parentRepo": {
+            "lastFoundGit": "2026-07-06T02:23:39.100Z",
+            "privateRepo": false,
+            "repoName": "IthFromAssembly",
+            "dateCreated": "2025-11-03T02:49:44Z",
+            "likes": 0,
+            "readMe": "https://raw.githubusercontent.com/tristan-huber/IthFromAssembly/master/README.md?sanitize=true",
+            "yyyy": 2025,
+            "topMoleculeID": "id-2718",
+            "githubMoleculesUsed": [],
+            "html_url": "https://github.com/tristan-huber/IthFromAssembly",
+            "topics": [
+              "abundance-tool"
+            ],
+            "parentRepo": null,
+            "forks": 0,
+            "dateModified": "739558",
+            "ranking": 9,
+            "searchField": "ithfromassembly tristan-huber get the ith leaf from an assembly abundance-tool",
+            "owner": "tristan-huber",
+            "description": "Get the ith leaf from an assembly",
+            "contentURL": "https://raw.githubusercontent.com/tristan-huber/IthFromAssembly/master/project.abundance?sanitize=true",
+            "svgURL": "https://raw.githubusercontent.com/tristan-huber/IthFromAssembly/master/project.svg?sanitize=true",
+            "isLocal": false
+          },
+          "unitsKey": "Unitless",
+          "fileTypeVersion": 1,
+          "lastReloadedFromGithubAt": 1783313515176
+        },
+        {
+          "atomType": "GitHubMolecule",
+          "x": 0.8177083333333334,
+          "y": 0.2916666666666667,
+          "uniqueID": "id-27804",
+          "name": "crv.OpenWireLoft",
+          "ioValues": [
+            {
+              "name": "Wires",
+              "ioValue": "__GEOMETRY_INPUT__"
+            },
+            {
+              "name": "Thickness",
+              "ioValue": -0.25
+            }
+          ],
+          "topLevel": false,
+          "allAtoms": [
+            {
+              "atomType": "Output",
+              "x": 0.98,
+              "y": 0.5,
+              "uniqueID": "id-27800",
+              "ioValues": [
+                {
+                  "name": "number or geometry",
+                  "ioValue": "__GEOMETRY_INPUT__"
+                }
+              ]
+            },
+            {
+              "atomType": "Code",
+              "x": 0.41861979166666663,
+              "y": 0.5416666666666666,
+              "uniqueID": "id-27801",
+              "ioValues": [
+                {
+                  "name": "wires",
+                  "ioValue": "__GEOMETRY_INPUT__"
+                },
+                {
+                  "name": "thickness",
+                  "ioValue": -0.25
+                }
+              ],
+              "interpreterVersion": 1,
+              "code": "\n/**\n * =========================================================================\n *  ABUNDANCE CODE ATOM — Quick Reference\n * =========================================================================\n *\n *  HOW INPUTS WORK\n *  ---------------\n *  Every parameter of run() becomes an input port on this atom.\n *  Four types are supported:\n *\n *    number   -> numeric input / slider\n *    string   -> text input  (great for hex color codes, labels, etc.)\n *    boolean  -> true/false toggle\n *    Assembly -> geometry -- wire this to the output of another atom\n *\n *  Give a parameter a default value ( = x ) to make it optional.\n *  Mark it with ? (name?: Assembly) to make it optional with no default.\n *  Parameters without a default must be connected before the atom runs.\n *\n *  RETURN VALUE\n *  ------------\n *  Return an Assembly, an Assembly[], or a primitive (number/string/boolean).\n *  Returning an Assembly[] lets downstream atoms (BOM, cut layout...)\n *  see each piece independently.\n *\n *  GEOMETRY API  (replicad is available as a global)\n *  -------------------------------------------------\n *  Create 2-D sketches\n *    replicad.drawCircle(radius)\n *    replicad.drawRectangle(width, height)\n *    replicad.drawRoundedRectangle(width, height, cornerRadius)\n *\n *  Turn a 2-D sketch into a 3-D solid\n *    sketch.sketchOnPlane().extrude(distance)\n *    sketch.sketchOnPlane().revolve()          // rotate 360 deg around Z\n *\n *  Create 3-D primitives directly\n *    replicad.makeBaseBox(width, depth, height)\n *    replicad.makeSphere(radius)\n *    replicad.makeCylinder(radius, height)\n *\n *  Boolean operations\n *    solidA.fuse(solidB)                       // union\n *    solidA.cut(solidB)                        // difference (cut a hole)\n *    solidA.intersect(solidB)                  // intersection\n *\n *  Post-processing\n *    solid.fillet(radius)                      // round ALL edges\n *    solid.fillet(r, e => e.inPlane(\"XY\", z))  // round only top-face edges\n *    solid.chamfer(distance)                   // bevel ALL edges\n *    solid.translate(x, y, z)                  // move the solid\n *    solid.rotate(angle, [0, 0, 1])            // rotate around Z axis\n *\n *  ASSEMBLY CLASS\n *  --------------\n *  Wrap any replicad solid in an Assembly to attach display metadata:\n *    new Assembly({ geometry, color, tags, bom })\n *      geometry -> replicad solid / drawing returned by the API above\n *      color    -> hex string shown in the 3-D viewport  (\"#A3CE5B\")\n *      tags     -> string[] used for filtering in cut layout / BOM\n *      bom      -> string[] lines added to the Bill of Materials panel\n *\n *  AI PROMPT TIP\n *  -------------\n *  Copy the code in this editor into ChatGPT / Claude and say something like:\n *    \"Modify this Abundance Code Atom to create a gear with 12 teeth\"\n *    \"Change this to make a hexagonal nut instead of a round plate\"\n *  The comments above give the AI all the context it needs to produce\n *  valid, working Abundance TypeScript code.\n * =========================================================================\n */\n\n/**\n * A rectangular mounting plate with a circular hole in the centre.\n * All parameters have defaults so the atom produces geometry immediately\n * after creation — no connections required to get started.\n */\n\n/**\n * This code atom implements a simple linear layout funtion which repeats\n * shape count times in the positive X direction with offset space\n * between each. Works for either 2D or 3D shapes. Negative offset\n * and negative counts invert the direction.\n * \n * Notice that defaults are set for both count and offset.\n */\nfunction run(wires: Assembly, thickness: number = 1) {\n  const wireList: replicad.Wire[] = []\n  wires.onLeafs((leaf) => {\n    if (leaf.isWire()) {\n      if (leaf.geometry.isClosed) {\n        throw new Error(\"Only open wires allowed for this loft operation\")\n      }\n      wireList.push(leaf.geometry)\n    }\n    return leaf;\n  })\n\n  const result = [];\n  for (let i = 0; i < wireList.length - 1; i++) {\n    const surf = replicad.loft(wireList.slice(i, i + 2), {}, true)\n    if (thickness != 0) {\n      const offset = replicad.makeOffset(surf.faces[0], thickness);\n      const w1 = replicad.assembleWire(surf.edges)\n      const w2 = replicad.assembleWire(offset.edges)\n      const boundary = replicad.loft([w2, w1], {}, true)\n      result.push(replicad.makeSolid([surf, offset, boundary]))\n    } else {\n      result.push(surf)\n    }\n  }\n  return result;\n}\n",
+              "compiledCode": "\"use strict\";\n/**\n * =========================================================================\n *  ABUNDANCE CODE ATOM — Quick Reference\n * =========================================================================\n *\n *  HOW INPUTS WORK\n *  ---------------\n *  Every parameter of run() becomes an input port on this atom.\n *  Four types are supported:\n *\n *    number   -> numeric input / slider\n *    string   -> text input  (great for hex color codes, labels, etc.)\n *    boolean  -> true/false toggle\n *    Assembly -> geometry -- wire this to the output of another atom\n *\n *  Give a parameter a default value ( = x ) to make it optional.\n *  Mark it with ? (name?: Assembly) to make it optional with no default.\n *  Parameters without a default must be connected before the atom runs.\n *\n *  RETURN VALUE\n *  ------------\n *  Return an Assembly, an Assembly[], or a primitive (number/string/boolean).\n *  Returning an Assembly[] lets downstream atoms (BOM, cut layout...)\n *  see each piece independently.\n *\n *  GEOMETRY API  (replicad is available as a global)\n *  -------------------------------------------------\n *  Create 2-D sketches\n *    replicad.drawCircle(radius)\n *    replicad.drawRectangle(width, height)\n *    replicad.drawRoundedRectangle(width, height, cornerRadius)\n *\n *  Turn a 2-D sketch into a 3-D solid\n *    sketch.sketchOnPlane().extrude(distance)\n *    sketch.sketchOnPlane().revolve()          // rotate 360 deg around Z\n *\n *  Create 3-D primitives directly\n *    replicad.makeBaseBox(width, depth, height)\n *    replicad.makeSphere(radius)\n *    replicad.makeCylinder(radius, height)\n *\n *  Boolean operations\n *    solidA.fuse(solidB)                       // union\n *    solidA.cut(solidB)                        // difference (cut a hole)\n *    solidA.intersect(solidB)                  // intersection\n *\n *  Post-processing\n *    solid.fillet(radius)                      // round ALL edges\n *    solid.fillet(r, e => e.inPlane(\"XY\", z))  // round only top-face edges\n *    solid.chamfer(distance)                   // bevel ALL edges\n *    solid.translate(x, y, z)                  // move the solid\n *    solid.rotate(angle, [0, 0, 1])            // rotate around Z axis\n *\n *  ASSEMBLY CLASS\n *  --------------\n *  Wrap any replicad solid in an Assembly to attach display metadata:\n *    new Assembly({ geometry, color, tags, bom })\n *      geometry -> replicad solid / drawing returned by the API above\n *      color    -> hex string shown in the 3-D viewport  (\"#A3CE5B\")\n *      tags     -> string[] used for filtering in cut layout / BOM\n *      bom      -> string[] lines added to the Bill of Materials panel\n *\n *  AI PROMPT TIP\n *  -------------\n *  Copy the code in this editor into ChatGPT / Claude and say something like:\n *    \"Modify this Abundance Code Atom to create a gear with 12 teeth\"\n *    \"Change this to make a hexagonal nut instead of a round plate\"\n *  The comments above give the AI all the context it needs to produce\n *  valid, working Abundance TypeScript code.\n * =========================================================================\n */\n/**\n * A rectangular mounting plate with a circular hole in the centre.\n * All parameters have defaults so the atom produces geometry immediately\n * after creation — no connections required to get started.\n */\n/**\n * This code atom implements a simple linear layout funtion which repeats\n * shape count times in the positive X direction with offset space\n * between each. Works for either 2D or 3D shapes. Negative offset\n * and negative counts invert the direction.\n *\n * Notice that defaults are set for both count and offset.\n */\nfunction run(wires, thickness = 1) {\n    const wireList = [];\n    wires.onLeafs((leaf) => {\n        if (leaf.isWire()) {\n            if (leaf.geometry.isClosed) {\n                throw new Error(\"Only open wires allowed for this loft operation\");\n            }\n            wireList.push(leaf.geometry);\n        }\n        return leaf;\n    });\n    const result = [];\n    for (let i = 0; i < wireList.length - 1; i++) {\n        const surf = replicad.loft(wireList.slice(i, i + 2), {}, true);\n        if (thickness != 0) {\n            const offset = replicad.makeOffset(surf.faces[0], thickness);\n            const w1 = replicad.assembleWire(surf.edges);\n            const w2 = replicad.assembleWire(offset.edges);\n            const boundary = replicad.loft([w2, w1], {}, true);\n            result.push(replicad.makeSolid([surf, offset, boundary]));\n        }\n        else {\n            result.push(surf);\n        }\n    }\n    return result;\n}\n"
+            },
+            {
+              "atomType": "Input",
+              "x": 0.025384615384615384,
+              "y": 0.15384615384615385,
+              "uniqueID": "id-27802",
+              "name": "Wires",
+              "type": "geometry"
+            },
+            {
+              "atomType": "Input",
+              "x": 0.025384615384615384,
+              "y": 0.24615384615384617,
+              "uniqueID": "id-27803",
+              "name": "Thickness",
+              "type": "number"
+            }
+          ],
+          "allConnectors": [
+            {
+              "ap2Name": "number or geometry",
+              "ap1ID": "id-27801",
+              "ap2ID": "id-27800"
+            },
+            {
+              "ap2Name": "wires",
+              "ap1ID": "id-27802",
+              "ap2ID": "id-27801"
+            },
+            {
+              "ap2Name": "thickness",
+              "ap1ID": "id-27803",
+              "ap2ID": "id-27801"
+            }
+          ],
+          "parentRepo": {
+            "lastFoundGit": "2026-07-06T02:23:39.100Z",
+            "privateRepo": false,
+            "repoName": "crv.OpenWireLoft",
+            "dateCreated": "2026-05-14T19:26:17Z",
+            "likes": 0,
+            "readMe": "https://raw.githubusercontent.com/tristan-huber/crv.OpenWireLoft/master/README.md?sanitize=true",
+            "yyyy": 2026,
+            "topMoleculeID": "id-3829",
+            "githubMoleculesUsed": [],
+            "html_url": "https://github.com/tristan-huber/crv.OpenWireLoft",
+            "topics": [
+              "abundance-tool"
+            ],
+            "parentRepo": null,
+            "forks": 0,
+            "dateModified": "739802",
+            "ranking": 3,
+            "searchField": "crv.openwireloft tristan-huber loft between open wires to generate a solid with fixed thickness. performs a ruled loft. abundance-tool",
+            "owner": "tristan-huber",
+            "description": "Loft between open wires to generate a solid with fixed thickness. Performs a ruled loft.",
+            "contentURL": "https://raw.githubusercontent.com/tristan-huber/crv.OpenWireLoft/master/project.abundance?sanitize=true",
+            "svgURL": "https://raw.githubusercontent.com/tristan-huber/crv.OpenWireLoft/master/project.svg?sanitize=true",
+            "isLocal": false
+          },
+          "unitsKey": "Unitless",
+          "fileTypeVersion": 1,
+          "lastReloadedFromGithubAt": 1783313562389
         },
         {
           "atomType": "Molecule",
@@ -2568,7 +3130,7 @@
           "atomType": "GitHubMolecule",
           "x": 0.1015625,
           "y": 0.46726190476190477,
-          "uniqueID": "id-27649",
+          "uniqueID": "id-28415",
           "name": "Width",
           "ioValues": [
             {
@@ -2582,7 +3144,7 @@
               "atomType": "Output",
               "x": 0.98,
               "y": 0.5,
-              "uniqueID": "id-27646",
+              "uniqueID": "id-28412",
               "ioValues": [
                 {
                   "name": "number or geometry",
@@ -2594,7 +3156,7 @@
               "atomType": "Input",
               "x": 0.025384615384615384,
               "y": 0.15384615384615385,
-              "uniqueID": "id-27647",
+              "uniqueID": "id-28413",
               "name": "Shape",
               "type": "geometry"
             },
@@ -2602,7 +3164,7 @@
               "atomType": "Code",
               "x": 0.380178716490658,
               "y": 0.47632311977715874,
-              "uniqueID": "id-27648",
+              "uniqueID": "id-28414",
               "ioValues": [
                 {
                   "name": "A",
@@ -2616,13 +3178,13 @@
           "allConnectors": [
             {
               "ap2Name": "A",
-              "ap1ID": "id-27647",
-              "ap2ID": "id-27648"
+              "ap1ID": "id-28413",
+              "ap2ID": "id-28414"
             },
             {
               "ap2Name": "number or geometry",
-              "ap1ID": "id-27648",
-              "ap2ID": "id-27646"
+              "ap1ID": "id-28414",
+              "ap2ID": "id-28412"
             }
           ],
           "parentRepo": {
@@ -2650,576 +3212,7 @@
           },
           "unitsKey": "MM",
           "fileTypeVersion": 1,
-          "lastReloadedFromGithubAt": 1783312926148
-        },
-        {
-          "atomType": "Code",
-          "x": 0.6243489583333334,
-          "y": 0.3630952380952381,
-          "uniqueID": "id-27677",
-          "ioValues": [
-            {
-              "name": "wires",
-              "ioValue": "__GEOMETRY_INPUT__"
-            },
-            {
-              "name": "within",
-              "ioValue": "__GEOMETRY_INPUT__"
-            }
-          ],
-          "interpreterVersion": 1,
-          "code": "function run(wires: Assembly, within: Assembly) {\n  if (!within.isLeaf()) {\n    throw Error(\"within must be  leaf for now\")\n  }\n  const result = []\n  wires.onLeafs((leaf) => {\n    const foo = (within.geometry as replicad.Solid).intersect(leaf.geometry as replicad.Wire)\n    result.push(foo)\n    return leaf;\n  })\n  console.log(result)\n  return result.map((w) => {return replicad.assembleWire(w.edges)})\n}",
-          "compiledCode": "\"use strict\";\nfunction run(wires, within) {\n    if (!within.isLeaf()) {\n        throw Error(\"within must be  leaf for now\");\n    }\n    const result = [];\n    wires.onLeafs((leaf) => {\n        const foo = within.geometry.intersect(leaf.geometry);\n        result.push(foo);\n        return leaf;\n    });\n    console.log(result);\n    return result.map((w) => { return replicad.assembleWire(w.edges); });\n}\n"
-        },
-        {
-          "atomType": "GitHubMolecule",
-          "x": 0.5481770833333333,
-          "y": 0.8988095238095238,
-          "uniqueID": "id-27681",
-          "name": "ClosestEdge",
-          "ioValues": [
-            {
-              "name": "EdgeFrom",
-              "ioValue": "__GEOMETRY_INPUT__"
-            },
-            {
-              "name": "NearestTo",
-              "ioValue": "__GEOMETRY_INPUT__"
-            },
-            {
-              "name": "tieTolerance",
-              "ioValue": 0.001
-            }
-          ],
-          "topLevel": false,
-          "allAtoms": [
-            {
-              "atomType": "Output",
-              "x": 0.98,
-              "y": 0.5,
-              "uniqueID": "id-27682",
-              "ioValues": [
-                {
-                  "name": "number or geometry",
-                  "ioValue": "__GEOMETRY_INPUT__"
-                }
-              ]
-            },
-            {
-              "atomType": "Code",
-              "x": 0.4309895833333333,
-              "y": 0.5059523809523809,
-              "uniqueID": "id-27683",
-              "ioValues": [
-                {
-                  "name": "edgeFrom",
-                  "ioValue": "__GEOMETRY_INPUT__"
-                },
-                {
-                  "name": "nearestTo",
-                  "ioValue": "__GEOMETRY_INPUT__"
-                },
-                {
-                  "name": "tolerance",
-                  "ioValue": 0.001
-                }
-              ],
-              "interpreterVersion": 1,
-              "code": "\nfunction run(\n  edgeFrom: Assembly,\n  nearestTo: Assembly,\n  tolerance: number = 0.001\n) {\n  let best: replicad.Edge[] = [];\n  let bestDist = Infinity;\n  const target: replicad.Vector = new replicad.Vector(getBBoxCenter(nearestTo)).multiply(-1)\n  edgeFrom.onLeafs((leaf) => {\n    if (!(leaf.geometry instanceof replicad.Drawing)) {\n      for (const edge of leaf.geometry.edges) {\n        const dist = edge.pointAt(.5).add(target).Length;\n        if (dist - bestDist < -1 * tolerance || best.length == 0) {\n          console.log(\"new best dist: \", dist)\n          best = [edge]\n          bestDist = dist;\n        } else if (Math.abs(dist - bestDist) < tolerance) {\n          // include ties\n          best.push(edge)\n        }\n      }\n      return leaf;\n    }\n  })\n  console.log(best)\n  return best.map((e) => { return replicad.assembleWire([e]) });\n}\n\nfunction getBBoxCenter(foo: Assembly) {\n  let bbox: replicad.BoundingBox = undefined;\n  foo.onLeafs((leaf) => {\n    if (bbox == undefined) {\n      bbox = leaf.geometry.boundingBox;\n    } else {\n      bbox.add(leaf.geometry.boundingBox)\n    }\n  })\n  return bbox.center;\n}\n/*\n  const surfaces = [];\n  const leadFaceEdges = [];\n  const endFaceEdges = [];\n  for (let i = 0; i < wireList.length; i++) {\n    const w1 = wireList[i]\n    const w2 = wireList[(i + 1) % wireList.length]\n    const surf = replicad.loft([w1, w2], {}, true)\n    surfaces.push(surf)\n    leadFaceEdges.push(replicad.makeLine(w1.startPoint, w2.startPoint))\n    endFaceEdges.push(replicad.makeLine(w1.endPoint, w2.endPoint))\n  }\n  const frontCap = replicad.makeNonPlanarFace(replicad.assembleWire(leadFaceEdges))\n  const endCap = replicad.makeNonPlanarFace(replicad.assembleWire(endFaceEdges))\n\n  return replicad.makeSolid([frontCap, ...surfaces, endCap])*/",
-              "compiledCode": "\"use strict\";\nfunction run(edgeFrom, nearestTo, tolerance = 0.001) {\n    let best = [];\n    let bestDist = Infinity;\n    const target = new replicad.Vector(getBBoxCenter(nearestTo)).multiply(-1);\n    edgeFrom.onLeafs((leaf) => {\n        if (!(leaf.geometry instanceof replicad.Drawing)) {\n            for (const edge of leaf.geometry.edges) {\n                const dist = edge.pointAt(.5).add(target).Length;\n                if (dist - bestDist < -1 * tolerance || best.length == 0) {\n                    console.log(\"new best dist: \", dist);\n                    best = [edge];\n                    bestDist = dist;\n                }\n                else if (Math.abs(dist - bestDist) < tolerance) {\n                    // include ties\n                    best.push(edge);\n                }\n            }\n            return leaf;\n        }\n    });\n    console.log(best);\n    return best.map((e) => { return replicad.assembleWire([e]); });\n}\nfunction getBBoxCenter(foo) {\n    let bbox = undefined;\n    foo.onLeafs((leaf) => {\n        if (bbox == undefined) {\n            bbox = leaf.geometry.boundingBox;\n        }\n        else {\n            bbox.add(leaf.geometry.boundingBox);\n        }\n    });\n    return bbox.center;\n}\n/*\n  const surfaces = [];\n  const leadFaceEdges = [];\n  const endFaceEdges = [];\n  for (let i = 0; i < wireList.length; i++) {\n    const w1 = wireList[i]\n    const w2 = wireList[(i + 1) % wireList.length]\n    const surf = replicad.loft([w1, w2], {}, true)\n    surfaces.push(surf)\n    leadFaceEdges.push(replicad.makeLine(w1.startPoint, w2.startPoint))\n    endFaceEdges.push(replicad.makeLine(w1.endPoint, w2.endPoint))\n  }\n  const frontCap = replicad.makeNonPlanarFace(replicad.assembleWire(leadFaceEdges))\n  const endCap = replicad.makeNonPlanarFace(replicad.assembleWire(endFaceEdges))\n\n  return replicad.makeSolid([frontCap, ...surfaces, endCap])*/ \n"
-            },
-            {
-              "atomType": "Input",
-              "x": 0.025384615384615384,
-              "y": 0.15384615384615385,
-              "uniqueID": "id-27684",
-              "name": "EdgeFrom",
-              "type": "geometry"
-            },
-            {
-              "atomType": "Input",
-              "x": 0.025384615384615384,
-              "y": 0.24615384615384617,
-              "uniqueID": "id-27685",
-              "name": "NearestTo",
-              "type": "geometry"
-            },
-            {
-              "atomType": "Input",
-              "x": 0.025384615384615384,
-              "y": 0.3384615384615385,
-              "uniqueID": "id-27686",
-              "name": "tieTolerance"
-            }
-          ],
-          "allConnectors": [
-            {
-              "ap2Name": "number or geometry",
-              "ap1ID": "id-27683",
-              "ap2ID": "id-27682"
-            },
-            {
-              "ap2Name": "edgeFrom",
-              "ap1ID": "id-27684",
-              "ap2ID": "id-27683"
-            },
-            {
-              "ap2Name": "nearestTo",
-              "ap1ID": "id-27685",
-              "ap2ID": "id-27683"
-            },
-            {
-              "ap2Name": "tolerance",
-              "ap1ID": "id-27686",
-              "ap2ID": "id-27683"
-            }
-          ],
-          "parentRepo": {
-            "lastFoundGit": "2026-07-06T02:23:39.100Z",
-            "privateRepo": false,
-            "repoName": "ClosestEdge",
-            "dateCreated": "2026-07-05T16:50:19Z",
-            "readMe": "https://raw.githubusercontent.com/tristan-huber/ClosestEdge/master/README.md?sanitize=true",
-            "yyyy": 2026,
-            "topMoleculeID": "id-22851",
-            "githubMoleculesUsed": [],
-            "html_url": "https://github.com/tristan-huber/ClosestEdge",
-            "topics": [
-              "abundance-tool"
-            ],
-            "parentRepo": null,
-            "forks": 0,
-            "dateModified": "739802",
-            "ranking": 0,
-            "searchField": "closestedge tristan-huber return a single edge from an assembly which is closest to another selector shape / assembly. pick an edge based on distance / nearness abundance-tool",
-            "owner": "tristan-huber",
-            "description": "Return a single edge from an assembly which is closest to another selector shape / assembly. Pick an edge based on distance / nearness",
-            "contentURL": "https://raw.githubusercontent.com/tristan-huber/ClosestEdge/master/project.abundance?sanitize=true",
-            "svgURL": "https://raw.githubusercontent.com/tristan-huber/ClosestEdge/master/project.svg?sanitize=true",
-            "isLocal": false
-          },
-          "unitsKey": "Unitless",
-          "fileTypeVersion": 1,
-          "lastReloadedFromGithubAt": 1783311760792
-        },
-        {
-          "atomType": "GitHubMolecule",
-          "x": 0.45182291666666663,
-          "y": 0.5982142857142857,
-          "uniqueID": "id-27756",
-          "name": "crv.Point",
-          "ioValues": [
-            {
-              "name": "X",
-              "ioValue": 0
-            },
-            {
-              "name": "Y",
-              "ioValue": 0
-            },
-            {
-              "name": "Z",
-              "ioValue": 0
-            }
-          ],
-          "topLevel": false,
-          "allAtoms": [
-            {
-              "atomType": "Output",
-              "x": 0.98,
-              "y": 0.5,
-              "uniqueID": "id-27751",
-              "ioValues": [
-                {
-                  "name": "number or geometry",
-                  "ioValue": "__GEOMETRY_INPUT__"
-                }
-              ]
-            },
-            {
-              "atomType": "Input",
-              "x": 0.025384615384615384,
-              "y": 0.15384615384615385,
-              "uniqueID": "id-27752",
-              "name": "X"
-            },
-            {
-              "atomType": "Code",
-              "x": 0.2688802083333333,
-              "y": 0.42857142857142855,
-              "uniqueID": "id-27753",
-              "ioValues": [
-                {
-                  "name": "x",
-                  "ioValue": 0
-                },
-                {
-                  "name": "y",
-                  "ioValue": 0
-                },
-                {
-                  "name": "z",
-                  "ioValue": 0
-                }
-              ],
-              "interpreterVersion": 1,
-              "code": "\nfunction run(x: number = 0, y: number = 0, z: number = 0) {\n  return replicad.makeVertex([x,y,z])\n}",
-              "compiledCode": "\"use strict\";\nfunction run(x = 0, y = 0, z = 0) {\n    return replicad.makeVertex([x, y, z]);\n}\n"
-            },
-            {
-              "atomType": "Input",
-              "x": 0.025384615384615384,
-              "y": 0.24615384615384617,
-              "uniqueID": "id-27754",
-              "name": "Y"
-            },
-            {
-              "atomType": "Input",
-              "x": 0.025384615384615384,
-              "y": 0.3384615384615385,
-              "uniqueID": "id-27755",
-              "name": "Z"
-            }
-          ],
-          "allConnectors": [
-            {
-              "ap2Name": "x",
-              "ap1ID": "id-27752",
-              "ap2ID": "id-27753"
-            },
-            {
-              "ap2Name": "number or geometry",
-              "ap1ID": "id-27753",
-              "ap2ID": "id-27751"
-            },
-            {
-              "ap2Name": "y",
-              "ap1ID": "id-27754",
-              "ap2ID": "id-27753"
-            },
-            {
-              "ap2Name": "z",
-              "ap1ID": "id-27755",
-              "ap2ID": "id-27753"
-            }
-          ],
-          "parentRepo": {
-            "lastFoundGit": "2026-07-06T02:23:39.100Z",
-            "privateRepo": false,
-            "repoName": "crv.Point",
-            "dateCreated": "2026-05-08T22:20:14Z",
-            "likes": 0,
-            "readMe": "https://raw.githubusercontent.com/tristan-huber/crv.Point/master/README.md?sanitize=true",
-            "yyyy": 2026,
-            "topMoleculeID": "id-1",
-            "githubMoleculesUsed": [],
-            "html_url": "https://github.com/tristan-huber/crv.Point",
-            "topics": [
-              "abundance-tool"
-            ],
-            "parentRepo": null,
-            "forks": 0,
-            "dateModified": "739800",
-            "ranking": 2.1,
-            "searchField": "crv.point tristan-huber simple 3d point defined by it's xyz position abundance-tool",
-            "owner": "tristan-huber",
-            "description": "Simple 3d Point defined by it's xyz position",
-            "contentURL": "https://raw.githubusercontent.com/tristan-huber/crv.Point/master/project.abundance?sanitize=true",
-            "svgURL": "https://raw.githubusercontent.com/tristan-huber/crv.Point/master/project.svg?sanitize=true",
-            "isLocal": false
-          },
-          "unitsKey": "Unitless",
-          "fileTypeVersion": 1,
-          "lastReloadedFromGithubAt": 1783313318860
-        },
-        {
-          "atomType": "Move",
-          "x": 0.55078125,
-          "y": 0.5982142857142857,
-          "uniqueID": "id-27771",
-          "ioValues": [
-            {
-              "name": "geometry",
-              "ioValue": "__GEOMETRY_INPUT__"
-            },
-            {
-              "name": "xDist",
-              "ioValue": 86.40000010316636
-            },
-            {
-              "name": "yDist",
-              "ioValue": 6
-            },
-            {
-              "name": "zDist",
-              "ioValue": -4,
-              "currentEquation": "-4"
-            }
-          ]
-        },
-        {
-          "atomType": "GitHubMolecule",
-          "x": 0.69921875,
-          "y": 0.3125,
-          "uniqueID": "id-27782",
-          "name": "IthFromAssembly",
-          "ioValues": [
-            {
-              "name": "geometry",
-              "ioValue": "__GEOMETRY_INPUT__"
-            },
-            {
-              "name": "i",
-              "ioValue": 1
-            }
-          ],
-          "topLevel": false,
-          "allAtoms": [
-            {
-              "atomType": "Output",
-              "x": 0.98,
-              "y": 0.5,
-              "uniqueID": "id-27778",
-              "ioValues": [
-                {
-                  "name": "number or geometry",
-                  "ioValue": "__GEOMETRY_INPUT__"
-                }
-              ]
-            },
-            {
-              "atomType": "Code",
-              "x": 0.5026041666666666,
-              "y": 0.6845238095238095,
-              "uniqueID": "id-27779",
-              "ioValues": [
-                {
-                  "name": "geometry",
-                  "ioValue": "__GEOMETRY_INPUT__"
-                },
-                {
-                  "name": "i",
-                  "ioValue": 1
-                }
-              ],
-              "interpreterVersion": 0,
-              "code": "\n      const Inputs = [\n       {inputName: \"geometry\", type: \"geometry\", defaultValue: null},\n      {inputName: \"i\", type: \"number\", defaultValue: 0},\n      ]\n      //This defines the molecules inputs and creates variables with the same names which can be referenced in the code\n\n      //Gets the shape from the library - no need to clone or access geometry directly\n      let importedShape = library[geometry]\n      let j = 0;\n      console.log(\"foo\")\n      console.log(importedShape)\n      const leafList = await AssemblyAsIterable(importedShape)\n      console.log(leafList)\n      if (i >= leafList.length) {\n        throw new Error(`Assembly only has ${leafList.length} entries. Tried to find index: ${i}.`)\n      }\n      return leafList[i]\n\n\n      /**\n      Built-in Functions Available:\n      - Move(geometry, x, y, z) - Move a shape in 3D space\n      - Rotate(geometry, x, y, z) - Rotate a shape around X, Y, Z axes (degrees)\n      - Scale(geometry, factor) - Scale a shape by a factor\n      - Assembly([shapes]) - Combine multiple shapes into an assembly\n      - Intersect(shape1, shape2) - Boolean intersection of two shapes\n      - GetBounds(geometry) - Get the bounding box of a shape\n      - Fillet(geometry, radius) - Round edges with specified radius\n      - Chamfer(geometry, size) - Bevel edges with specified size\n\n      To Use the Code Atom, enter your inputs to the input list as an object array:\n      const Inputs = [\n        {inputName: \"shape\", type: \"geometry\", defaultValue: null},\n        {inputName: \"dist\", type: \"number\", defaultValue: 5},\n        {inputName: \"height\", type: \"number\", defaultValue: 10}\n      ]\n\n      Access imported geometry using library[inputName] - the built-in functions handle \n      the complexity of accessing geometry arrays and maintaining metadata automatically.\n\n      Simple Example - Move a shape:\n         const Inputs = [\n          {inputName: \"shape\", type: \"geometry\", defaultValue: null},\n          {inputName: \"x\", type: \"number\", defaultValue: 5}\n        ]\n        let movedShape = await Move(library[shape], x, 0, 0)\n        return movedShape\n      */\n      "
-            },
-            {
-              "atomType": "Input",
-              "x": 0.025384615384615384,
-              "y": 0.15384615384615385,
-              "uniqueID": "id-27780",
-              "name": "geometry",
-              "type": "geometry"
-            },
-            {
-              "atomType": "Input",
-              "x": 0.025384615384615384,
-              "y": 0.24615384615384617,
-              "uniqueID": "id-27781",
-              "name": "i",
-              "type": "number"
-            }
-          ],
-          "allConnectors": [
-            {
-              "ap2Name": "number or geometry",
-              "ap1ID": "id-27779",
-              "ap2ID": "id-27778"
-            },
-            {
-              "ap2Name": "geometry",
-              "ap1ID": "id-27780",
-              "ap2ID": "id-27779"
-            },
-            {
-              "ap2Name": "i",
-              "ap1ID": "id-27781",
-              "ap2ID": "id-27779"
-            }
-          ],
-          "parentRepo": {
-            "lastFoundGit": "2026-07-06T02:23:39.100Z",
-            "privateRepo": false,
-            "repoName": "IthFromAssembly",
-            "dateCreated": "2025-11-03T02:49:44Z",
-            "likes": 0,
-            "readMe": "https://raw.githubusercontent.com/tristan-huber/IthFromAssembly/master/README.md?sanitize=true",
-            "yyyy": 2025,
-            "topMoleculeID": "id-2718",
-            "githubMoleculesUsed": [],
-            "html_url": "https://github.com/tristan-huber/IthFromAssembly",
-            "topics": [
-              "abundance-tool"
-            ],
-            "parentRepo": null,
-            "forks": 0,
-            "dateModified": "739558",
-            "ranking": 9,
-            "searchField": "ithfromassembly tristan-huber get the ith leaf from an assembly abundance-tool",
-            "owner": "tristan-huber",
-            "description": "Get the ith leaf from an assembly",
-            "contentURL": "https://raw.githubusercontent.com/tristan-huber/IthFromAssembly/master/project.abundance?sanitize=true",
-            "svgURL": "https://raw.githubusercontent.com/tristan-huber/IthFromAssembly/master/project.svg?sanitize=true",
-            "isLocal": false
-          },
-          "unitsKey": "Unitless",
-          "fileTypeVersion": 1,
-          "lastReloadedFromGithubAt": 1783313515176
-        },
-        {
-          "atomType": "Assembly",
-          "x": 0.7578125,
-          "y": 0.46726190476190477,
-          "uniqueID": "id-27794",
-          "ioValues": [
-            {
-              "name": "Shape 1",
-              "ioValue": null
-            },
-            {
-              "name": "Shape 2",
-              "ioValue": null
-            }
-          ]
-        },
-        {
-          "atomType": "GitHubMolecule",
-          "x": 0.8177083333333334,
-          "y": 0.2916666666666667,
-          "uniqueID": "id-27804",
-          "name": "crv.OpenWireLoft",
-          "ioValues": [
-            {
-              "name": "Wires",
-              "ioValue": "__GEOMETRY_INPUT__"
-            },
-            {
-              "name": "Thickness",
-              "ioValue": -0.25,
-              "currentEquation": "-0.25"
-            }
-          ],
-          "topLevel": false,
-          "allAtoms": [
-            {
-              "atomType": "Output",
-              "x": 0.98,
-              "y": 0.5,
-              "uniqueID": "id-27800",
-              "ioValues": [
-                {
-                  "name": "number or geometry",
-                  "ioValue": "__GEOMETRY_INPUT__"
-                }
-              ]
-            },
-            {
-              "atomType": "Code",
-              "x": 0.41861979166666663,
-              "y": 0.5416666666666666,
-              "uniqueID": "id-27801",
-              "ioValues": [
-                {
-                  "name": "wires",
-                  "ioValue": "__GEOMETRY_INPUT__"
-                },
-                {
-                  "name": "thickness",
-                  "ioValue": -0.25
-                }
-              ],
-              "interpreterVersion": 1,
-              "code": "\n/**\n * =========================================================================\n *  ABUNDANCE CODE ATOM — Quick Reference\n * =========================================================================\n *\n *  HOW INPUTS WORK\n *  ---------------\n *  Every parameter of run() becomes an input port on this atom.\n *  Four types are supported:\n *\n *    number   -> numeric input / slider\n *    string   -> text input  (great for hex color codes, labels, etc.)\n *    boolean  -> true/false toggle\n *    Assembly -> geometry -- wire this to the output of another atom\n *\n *  Give a parameter a default value ( = x ) to make it optional.\n *  Mark it with ? (name?: Assembly) to make it optional with no default.\n *  Parameters without a default must be connected before the atom runs.\n *\n *  RETURN VALUE\n *  ------------\n *  Return an Assembly, an Assembly[], or a primitive (number/string/boolean).\n *  Returning an Assembly[] lets downstream atoms (BOM, cut layout...)\n *  see each piece independently.\n *\n *  GEOMETRY API  (replicad is available as a global)\n *  -------------------------------------------------\n *  Create 2-D sketches\n *    replicad.drawCircle(radius)\n *    replicad.drawRectangle(width, height)\n *    replicad.drawRoundedRectangle(width, height, cornerRadius)\n *\n *  Turn a 2-D sketch into a 3-D solid\n *    sketch.sketchOnPlane().extrude(distance)\n *    sketch.sketchOnPlane().revolve()          // rotate 360 deg around Z\n *\n *  Create 3-D primitives directly\n *    replicad.makeBaseBox(width, depth, height)\n *    replicad.makeSphere(radius)\n *    replicad.makeCylinder(radius, height)\n *\n *  Boolean operations\n *    solidA.fuse(solidB)                       // union\n *    solidA.cut(solidB)                        // difference (cut a hole)\n *    solidA.intersect(solidB)                  // intersection\n *\n *  Post-processing\n *    solid.fillet(radius)                      // round ALL edges\n *    solid.fillet(r, e => e.inPlane(\"XY\", z))  // round only top-face edges\n *    solid.chamfer(distance)                   // bevel ALL edges\n *    solid.translate(x, y, z)                  // move the solid\n *    solid.rotate(angle, [0, 0, 1])            // rotate around Z axis\n *\n *  ASSEMBLY CLASS\n *  --------------\n *  Wrap any replicad solid in an Assembly to attach display metadata:\n *    new Assembly({ geometry, color, tags, bom })\n *      geometry -> replicad solid / drawing returned by the API above\n *      color    -> hex string shown in the 3-D viewport  (\"#A3CE5B\")\n *      tags     -> string[] used for filtering in cut layout / BOM\n *      bom      -> string[] lines added to the Bill of Materials panel\n *\n *  AI PROMPT TIP\n *  -------------\n *  Copy the code in this editor into ChatGPT / Claude and say something like:\n *    \"Modify this Abundance Code Atom to create a gear with 12 teeth\"\n *    \"Change this to make a hexagonal nut instead of a round plate\"\n *  The comments above give the AI all the context it needs to produce\n *  valid, working Abundance TypeScript code.\n * =========================================================================\n */\n\n/**\n * A rectangular mounting plate with a circular hole in the centre.\n * All parameters have defaults so the atom produces geometry immediately\n * after creation — no connections required to get started.\n */\n\n/**\n * This code atom implements a simple linear layout funtion which repeats\n * shape count times in the positive X direction with offset space\n * between each. Works for either 2D or 3D shapes. Negative offset\n * and negative counts invert the direction.\n * \n * Notice that defaults are set for both count and offset.\n */\nfunction run(wires: Assembly, thickness: number = 1) {\n  const wireList: replicad.Wire[] = []\n  wires.onLeafs((leaf) => {\n    if (leaf.isWire()) {\n      if (leaf.geometry.isClosed) {\n        throw new Error(\"Only open wires allowed for this loft operation\")\n      }\n      wireList.push(leaf.geometry)\n    }\n    return leaf;\n  })\n\n  const result = [];\n  for (let i = 0; i < wireList.length - 1; i++) {\n    const surf = replicad.loft(wireList.slice(i, i + 2), {}, true)\n    if (thickness != 0) {\n      const offset = replicad.makeOffset(surf.faces[0], thickness);\n      const w1 = replicad.assembleWire(surf.edges)\n      const w2 = replicad.assembleWire(offset.edges)\n      const boundary = replicad.loft([w2, w1], {}, true)\n      result.push(replicad.makeSolid([surf, offset, boundary]))\n    } else {\n      result.push(surf)\n    }\n  }\n  return result;\n}\n",
-              "compiledCode": "\"use strict\";\n/**\n * =========================================================================\n *  ABUNDANCE CODE ATOM — Quick Reference\n * =========================================================================\n *\n *  HOW INPUTS WORK\n *  ---------------\n *  Every parameter of run() becomes an input port on this atom.\n *  Four types are supported:\n *\n *    number   -> numeric input / slider\n *    string   -> text input  (great for hex color codes, labels, etc.)\n *    boolean  -> true/false toggle\n *    Assembly -> geometry -- wire this to the output of another atom\n *\n *  Give a parameter a default value ( = x ) to make it optional.\n *  Mark it with ? (name?: Assembly) to make it optional with no default.\n *  Parameters without a default must be connected before the atom runs.\n *\n *  RETURN VALUE\n *  ------------\n *  Return an Assembly, an Assembly[], or a primitive (number/string/boolean).\n *  Returning an Assembly[] lets downstream atoms (BOM, cut layout...)\n *  see each piece independently.\n *\n *  GEOMETRY API  (replicad is available as a global)\n *  -------------------------------------------------\n *  Create 2-D sketches\n *    replicad.drawCircle(radius)\n *    replicad.drawRectangle(width, height)\n *    replicad.drawRoundedRectangle(width, height, cornerRadius)\n *\n *  Turn a 2-D sketch into a 3-D solid\n *    sketch.sketchOnPlane().extrude(distance)\n *    sketch.sketchOnPlane().revolve()          // rotate 360 deg around Z\n *\n *  Create 3-D primitives directly\n *    replicad.makeBaseBox(width, depth, height)\n *    replicad.makeSphere(radius)\n *    replicad.makeCylinder(radius, height)\n *\n *  Boolean operations\n *    solidA.fuse(solidB)                       // union\n *    solidA.cut(solidB)                        // difference (cut a hole)\n *    solidA.intersect(solidB)                  // intersection\n *\n *  Post-processing\n *    solid.fillet(radius)                      // round ALL edges\n *    solid.fillet(r, e => e.inPlane(\"XY\", z))  // round only top-face edges\n *    solid.chamfer(distance)                   // bevel ALL edges\n *    solid.translate(x, y, z)                  // move the solid\n *    solid.rotate(angle, [0, 0, 1])            // rotate around Z axis\n *\n *  ASSEMBLY CLASS\n *  --------------\n *  Wrap any replicad solid in an Assembly to attach display metadata:\n *    new Assembly({ geometry, color, tags, bom })\n *      geometry -> replicad solid / drawing returned by the API above\n *      color    -> hex string shown in the 3-D viewport  (\"#A3CE5B\")\n *      tags     -> string[] used for filtering in cut layout / BOM\n *      bom      -> string[] lines added to the Bill of Materials panel\n *\n *  AI PROMPT TIP\n *  -------------\n *  Copy the code in this editor into ChatGPT / Claude and say something like:\n *    \"Modify this Abundance Code Atom to create a gear with 12 teeth\"\n *    \"Change this to make a hexagonal nut instead of a round plate\"\n *  The comments above give the AI all the context it needs to produce\n *  valid, working Abundance TypeScript code.\n * =========================================================================\n */\n/**\n * A rectangular mounting plate with a circular hole in the centre.\n * All parameters have defaults so the atom produces geometry immediately\n * after creation — no connections required to get started.\n */\n/**\n * This code atom implements a simple linear layout funtion which repeats\n * shape count times in the positive X direction with offset space\n * between each. Works for either 2D or 3D shapes. Negative offset\n * and negative counts invert the direction.\n *\n * Notice that defaults are set for both count and offset.\n */\nfunction run(wires, thickness = 1) {\n    const wireList = [];\n    wires.onLeafs((leaf) => {\n        if (leaf.isWire()) {\n            if (leaf.geometry.isClosed) {\n                throw new Error(\"Only open wires allowed for this loft operation\");\n            }\n            wireList.push(leaf.geometry);\n        }\n        return leaf;\n    });\n    const result = [];\n    for (let i = 0; i < wireList.length - 1; i++) {\n        const surf = replicad.loft(wireList.slice(i, i + 2), {}, true);\n        if (thickness != 0) {\n            const offset = replicad.makeOffset(surf.faces[0], thickness);\n            const w1 = replicad.assembleWire(surf.edges);\n            const w2 = replicad.assembleWire(offset.edges);\n            const boundary = replicad.loft([w2, w1], {}, true);\n            result.push(replicad.makeSolid([surf, offset, boundary]));\n        }\n        else {\n            result.push(surf);\n        }\n    }\n    return result;\n}\n"
-            },
-            {
-              "atomType": "Input",
-              "x": 0.025384615384615384,
-              "y": 0.15384615384615385,
-              "uniqueID": "id-27802",
-              "name": "Wires",
-              "type": "geometry"
-            },
-            {
-              "atomType": "Input",
-              "x": 0.025384615384615384,
-              "y": 0.24615384615384617,
-              "uniqueID": "id-27803",
-              "name": "Thickness",
-              "type": "number"
-            }
-          ],
-          "allConnectors": [
-            {
-              "ap2Name": "number or geometry",
-              "ap1ID": "id-27801",
-              "ap2ID": "id-27800"
-            },
-            {
-              "ap2Name": "wires",
-              "ap1ID": "id-27802",
-              "ap2ID": "id-27801"
-            },
-            {
-              "ap2Name": "thickness",
-              "ap1ID": "id-27803",
-              "ap2ID": "id-27801"
-            }
-          ],
-          "parentRepo": {
-            "lastFoundGit": "2026-07-06T02:23:39.100Z",
-            "privateRepo": false,
-            "repoName": "crv.OpenWireLoft",
-            "dateCreated": "2026-05-14T19:26:17Z",
-            "likes": 0,
-            "readMe": "https://raw.githubusercontent.com/tristan-huber/crv.OpenWireLoft/master/README.md?sanitize=true",
-            "yyyy": 2026,
-            "topMoleculeID": "id-3829",
-            "githubMoleculesUsed": [],
-            "html_url": "https://github.com/tristan-huber/crv.OpenWireLoft",
-            "topics": [
-              "abundance-tool"
-            ],
-            "parentRepo": null,
-            "forks": 0,
-            "dateModified": "739802",
-            "ranking": 3,
-            "searchField": "crv.openwireloft tristan-huber loft between open wires to generate a solid with fixed thickness. performs a ruled loft. abundance-tool",
-            "owner": "tristan-huber",
-            "description": "Loft between open wires to generate a solid with fixed thickness. Performs a ruled loft.",
-            "contentURL": "https://raw.githubusercontent.com/tristan-huber/crv.OpenWireLoft/master/project.abundance?sanitize=true",
-            "svgURL": "https://raw.githubusercontent.com/tristan-huber/crv.OpenWireLoft/master/project.svg?sanitize=true",
-            "isLocal": false
-          },
-          "unitsKey": "Unitless",
-          "fileTypeVersion": 1,
-          "lastReloadedFromGithubAt": 1783313562389
-        },
-        {
-          "atomType": "Move",
-          "x": 0.6438802083333333,
-          "y": 0.7083333333333333,
-          "uniqueID": "id-27816",
-          "ioValues": [
-            {
-              "name": "geometry",
-              "ioValue": "__GEOMETRY_INPUT__"
-            },
-            {
-              "name": "xDist",
-              "ioValue": 3
-            },
-            {
-              "name": "yDist",
-              "ioValue": 0
-            },
-            {
-              "name": "zDist",
-              "ioValue": 0
-            }
-          ]
+          "lastReloadedFromGithubAt": 1783313936776
         }
       ],
       "allConnectors": [
@@ -3276,7 +3269,7 @@
         {
           "ap2Name": "Shape",
           "ap1ID": "id-27063",
-          "ap2ID": "id-27649"
+          "ap2ID": "id-28415"
         },
         {
           "ap2Name": "y",
@@ -3329,6 +3322,21 @@
           "ap2ID": "id-27782"
         },
         {
+          "ap2Name": "geometry",
+          "ap1ID": "id-27771",
+          "ap2ID": "id-27816"
+        },
+        {
+          "ap2Name": "Wires",
+          "ap1ID": "id-27794",
+          "ap2ID": "id-27804"
+        },
+        {
+          "ap2Name": "NearestTo",
+          "ap1ID": "id-27816",
+          "ap2ID": "id-27681"
+        },
+        {
           "ap2Name": "wires",
           "ap1ID": "id-26894",
           "ap2ID": "id-27117"
@@ -3337,36 +3345,6 @@
           "ap2Name": "wires",
           "ap1ID": "id-26894",
           "ap2ID": "id-27677"
-        },
-        {
-          "ap2Name": "geometry",
-          "ap1ID": "id-26848",
-          "ap2ID": "id-26886"
-        },
-        {
-          "ap2Name": "x",
-          "ap1ID": "id-27649",
-          "ap2ID": "id-26893"
-        },
-        {
-          "ap2Name": "x length",
-          "ap1ID": "id-27649",
-          "ap2ID": "id-27074"
-        },
-        {
-          "ap2Name": "y length",
-          "ap1ID": "id-27649",
-          "ap2ID": "id-27074"
-        },
-        {
-          "ap2Name": "w",
-          "ap1ID": "id-27649",
-          "ap2ID": "id-27084"
-        },
-        {
-          "ap2Name": "xDist",
-          "ap1ID": "id-27649",
-          "ap2ID": "id-27094"
         },
         {
           "ap2Name": "Shape 2",
@@ -3379,29 +3357,39 @@
           "ap2ID": "id-27771"
         },
         {
-          "ap2Name": "geometry",
-          "ap1ID": "id-27771",
-          "ap2ID": "id-27816"
-        },
-        {
           "ap2Name": "Shape 1",
           "ap1ID": "id-27782",
           "ap2ID": "id-27794"
         },
         {
-          "ap2Name": "Wires",
-          "ap1ID": "id-27794",
-          "ap2ID": "id-27804"
+          "ap2Name": "geometry",
+          "ap1ID": "id-26848",
+          "ap2ID": "id-26886"
         },
         {
-          "ap2Name": "Shape 3",
-          "ap1ID": "id-27804",
-          "ap2ID": "id-27069"
+          "ap2Name": "x",
+          "ap1ID": "id-28415",
+          "ap2ID": "id-26893"
         },
         {
-          "ap2Name": "NearestTo",
-          "ap1ID": "id-27816",
-          "ap2ID": "id-27681"
+          "ap2Name": "x length",
+          "ap1ID": "id-28415",
+          "ap2ID": "id-27074"
+        },
+        {
+          "ap2Name": "y length",
+          "ap1ID": "id-28415",
+          "ap2ID": "id-27074"
+        },
+        {
+          "ap2Name": "w",
+          "ap1ID": "id-28415",
+          "ap2ID": "id-27084"
+        },
+        {
+          "ap2Name": "xDist",
+          "ap1ID": "id-28415",
+          "ap2ID": "id-27094"
         }
       ],
       "fileTypeVersion": 1
