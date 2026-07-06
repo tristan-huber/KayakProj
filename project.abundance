@@ -4840,20 +4840,23 @@
           ]
         },
         {
-          "atomType": "Intersection",
-          "x": 0.6549479166666667,
-          "y": 0.30952380952380953,
-          "uniqueID": "id-27113",
+          "atomType": "Code",
+          "x": 0.62109375,
+          "y": 0.39285714285714285,
+          "uniqueID": "id-27117",
           "ioValues": [
             {
-              "name": "geometry1",
+              "name": "wires",
               "ioValue": "__GEOMETRY_INPUT__"
             },
             {
-              "name": "geometry2",
+              "name": "within",
               "ioValue": "__GEOMETRY_INPUT__"
             }
-          ]
+          ],
+          "interpreterVersion": 1,
+          "code": "function run(wires: Assembly, within: Assembly) {\n  if (!within.isLeaf()) {\n    throw Error(\"within must be  leaf for now\")\n  }\n  console.log(within.geometry)\n  return wires.onLeafs((leaf) => {\n    leaf.geometry = within.geometry.intersect(leaf.geometry)\n    return leaf;\n  })\n}",
+          "compiledCode": "\"use strict\";\nfunction run(wires, within) {\n    if (!within.isLeaf()) {\n        throw Error(\"within must be  leaf for now\");\n    }\n    console.log(within.geometry);\n    return wires.onLeafs((leaf) => {\n        leaf.geometry = within.geometry.intersect(leaf.geometry);\n        return leaf;\n    });\n}\n"
         }
       ],
       "allConnectors": [
@@ -4913,6 +4916,11 @@
           "ap2ID": "id-27094"
         },
         {
+          "ap2Name": "wires",
+          "ap1ID": "id-26894",
+          "ap2ID": "id-27117"
+        },
+        {
           "ap2Name": "geometry",
           "ap1ID": "id-26848",
           "ap2ID": "id-26886"
@@ -4966,6 +4974,11 @@
           "ap2Name": "geometry",
           "ap1ID": "id-27090",
           "ap2ID": "id-27094"
+        },
+        {
+          "ap2Name": "within",
+          "ap1ID": "id-27094",
+          "ap2ID": "id-27117"
         }
       ],
       "fileTypeVersion": 1
