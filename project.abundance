@@ -4838,6 +4838,22 @@
               "ioValue": 0
             }
           ]
+        },
+        {
+          "atomType": "Intersection",
+          "x": 0.6549479166666667,
+          "y": 0.30952380952380953,
+          "uniqueID": "id-27113",
+          "ioValues": [
+            {
+              "name": "geometry1",
+              "ioValue": "__GEOMETRY_INPUT__"
+            },
+            {
+              "name": "geometry2",
+              "ioValue": "__GEOMETRY_INPUT__"
+            }
+          ]
         }
       ],
       "allConnectors": [
