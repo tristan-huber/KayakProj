@@ -1909,8 +1909,8 @@
             },
             {
               "atomType": "Assembly",
-              "x": 0.87890625,
-              "y": 0.6309523809523809,
+              "x": 0.900390625,
+              "y": 0.5892857142857143,
               "uniqueID": "id-26884",
               "ioValues": [
                 {
@@ -2649,8 +2649,8 @@
         },
         {
           "atomType": "GitHubMolecule",
-          "x": 0.828125,
-          "y": 0.33035714285714285,
+          "x": 0.85546875,
+          "y": 0.5059523809523809,
           "uniqueID": "id-27665",
           "name": "crv.OpenWireLoft",
           "ioValues": [
@@ -2909,6 +2909,162 @@
           "unitsKey": "Unitless",
           "fileTypeVersion": 1,
           "lastReloadedFromGithubAt": 1783311760792
+        },
+        {
+          "atomType": "GitHubMolecule",
+          "x": 0.45182291666666663,
+          "y": 0.5982142857142857,
+          "uniqueID": "id-27756",
+          "name": "crv.Point",
+          "ioValues": [
+            {
+              "name": "X",
+              "ioValue": 0
+            },
+            {
+              "name": "Y",
+              "ioValue": 0
+            },
+            {
+              "name": "Z",
+              "ioValue": 0
+            }
+          ],
+          "topLevel": false,
+          "allAtoms": [
+            {
+              "atomType": "Output",
+              "x": 0.98,
+              "y": 0.5,
+              "uniqueID": "id-27751",
+              "ioValues": [
+                {
+                  "name": "number or geometry",
+                  "ioValue": "__GEOMETRY_INPUT__"
+                }
+              ]
+            },
+            {
+              "atomType": "Input",
+              "x": 0.025384615384615384,
+              "y": 0.15384615384615385,
+              "uniqueID": "id-27752",
+              "name": "X"
+            },
+            {
+              "atomType": "Code",
+              "x": 0.2688802083333333,
+              "y": 0.42857142857142855,
+              "uniqueID": "id-27753",
+              "ioValues": [
+                {
+                  "name": "x",
+                  "ioValue": 0
+                },
+                {
+                  "name": "y",
+                  "ioValue": 0
+                },
+                {
+                  "name": "z",
+                  "ioValue": 0
+                }
+              ],
+              "interpreterVersion": 1,
+              "code": "\nfunction run(x: number = 0, y: number = 0, z: number = 0) {\n  return replicad.makeVertex([x,y,z])\n}",
+              "compiledCode": "\"use strict\";\nfunction run(x = 0, y = 0, z = 0) {\n    return replicad.makeVertex([x, y, z]);\n}\n"
+            },
+            {
+              "atomType": "Input",
+              "x": 0.025384615384615384,
+              "y": 0.24615384615384617,
+              "uniqueID": "id-27754",
+              "name": "Y"
+            },
+            {
+              "atomType": "Input",
+              "x": 0.025384615384615384,
+              "y": 0.3384615384615385,
+              "uniqueID": "id-27755",
+              "name": "Z"
+            }
+          ],
+          "allConnectors": [
+            {
+              "ap2Name": "x",
+              "ap1ID": "id-27752",
+              "ap2ID": "id-27753"
+            },
+            {
+              "ap2Name": "number or geometry",
+              "ap1ID": "id-27753",
+              "ap2ID": "id-27751"
+            },
+            {
+              "ap2Name": "y",
+              "ap1ID": "id-27754",
+              "ap2ID": "id-27753"
+            },
+            {
+              "ap2Name": "z",
+              "ap1ID": "id-27755",
+              "ap2ID": "id-27753"
+            }
+          ],
+          "parentRepo": {
+            "lastFoundGit": "2026-07-06T02:23:39.100Z",
+            "privateRepo": false,
+            "repoName": "crv.Point",
+            "dateCreated": "2026-05-08T22:20:14Z",
+            "likes": 0,
+            "readMe": "https://raw.githubusercontent.com/tristan-huber/crv.Point/master/README.md?sanitize=true",
+            "yyyy": 2026,
+            "topMoleculeID": "id-1",
+            "githubMoleculesUsed": [],
+            "html_url": "https://github.com/tristan-huber/crv.Point",
+            "topics": [
+              "abundance-tool"
+            ],
+            "parentRepo": null,
+            "forks": 0,
+            "dateModified": "739800",
+            "ranking": 2.1,
+            "searchField": "crv.point tristan-huber simple 3d point defined by it's xyz position abundance-tool",
+            "owner": "tristan-huber",
+            "description": "Simple 3d Point defined by it's xyz position",
+            "contentURL": "https://raw.githubusercontent.com/tristan-huber/crv.Point/master/project.abundance?sanitize=true",
+            "svgURL": "https://raw.githubusercontent.com/tristan-huber/crv.Point/master/project.svg?sanitize=true",
+            "isLocal": false
+          },
+          "unitsKey": "Unitless",
+          "fileTypeVersion": 1,
+          "lastReloadedFromGithubAt": 1783313318860
+        },
+        {
+          "atomType": "Move",
+          "x": 0.55078125,
+          "y": 0.5982142857142857,
+          "uniqueID": "id-27771",
+          "ioValues": [
+            {
+              "name": "geometry",
+              "ioValue": "__GEOMETRY_INPUT__"
+            },
+            {
+              "name": "xDist",
+              "ioValue": 74.88000008941086
+            },
+            {
+              "name": "yDist",
+              "ioValue": 3,
+              "currentEquation": "3"
+            },
+            {
+              "name": "zDist",
+              "ioValue": -4,
+              "currentEquation": "-4"
+            }
+          ]
         }
       ],
       "allConnectors": [
@@ -2933,11 +3089,6 @@
           "ap2ID": "id-27681"
         },
         {
-          "ap2Name": "NearestTo",
-          "ap1ID": "id-26887",
-          "ap2ID": "id-27681"
-        },
-        {
           "ap2Name": "xDist",
           "ap1ID": "id-26893",
           "ap2ID": "id-26887"
@@ -2946,6 +3097,11 @@
           "ap2Name": "zDist",
           "ap1ID": "id-26893",
           "ap2ID": "id-26900"
+        },
+        {
+          "ap2Name": "xDist",
+          "ap1ID": "id-26893",
+          "ap2ID": "id-27771"
         },
         {
           "ap2Name": "NearestTo",
@@ -3056,6 +3212,16 @@
           "ap2Name": "xDist",
           "ap1ID": "id-27649",
           "ap2ID": "id-27094"
+        },
+        {
+          "ap2Name": "geometry",
+          "ap1ID": "id-27756",
+          "ap2ID": "id-27771"
+        },
+        {
+          "ap2Name": "NearestTo",
+          "ap1ID": "id-27771",
+          "ap2ID": "id-27681"
         }
       ],
       "fileTypeVersion": 1
