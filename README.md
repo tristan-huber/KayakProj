@@ -7,6 +7,7 @@
 ## Inputs
 
 - **HullMaterialWidth** (number)
+- **Input** (number)
 
 
 
